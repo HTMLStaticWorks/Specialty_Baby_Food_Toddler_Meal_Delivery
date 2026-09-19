@@ -1,2 +1,0 @@
-# Specialty_Baby_Food_Toddler_Meal_Delivery
-Automated website repository for Specialty_Baby_Food_Toddler_Meal_Delivery

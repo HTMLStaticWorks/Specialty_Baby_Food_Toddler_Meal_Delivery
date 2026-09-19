@@ -84,16 +84,18 @@
   </div>
 
   <!-- ALLERGY SECTION 01 — HERO -->
-  <section class="hero text-center">
-    <div class="container" style="max-width: 900px;">
-      <span class="section-tag">SAFETY & TRANSPARENCY</span>
+  <section class="page-hero" style="background-image: url('assets/images/hero-allergy-safe-kitchen.jpg');">
+    <div class="page-hero-inner">
+      <span class="section-tag">SAFETY &amp; TRANSPARENCY</span>
       <h1>Know Every Ingredient Before Mealtime.</h1>
-      <p class="text-muted" style="margin-top: 16px; margin-bottom: 28px;">
+      <p class="text-muted">
         Clear ingredient information and parent-controlled preference settings help families make informed meal choices.
       </p>
-      <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); max-height: 400px;">
-        <img src="assets/images/hero-allergy-safe-kitchen.jpg" alt="100% Nut-Free & Dairy-Free Lab Certified Kitchen Ingredients" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-      </div>
+      <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <span>Allergies</span>
+      </nav>
     </div>
   </section>
 
@@ -416,13 +418,13 @@
       </div>
 
       <div style="background: var(--bg-alt); padding: 32px; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; text-align: left;">
-        <div>
+        <div style="flex: 1; min-width: 0;">
           <h4 style="margin-bottom: 6px;">Ready to Build Your Child's Custom Allergy Profile?</h4>
           <p class="text-muted" style="font-size: 0.92rem;">Access your Parent Portal dashboard to configure dietary rules in under 2 minutes.</p>
         </div>
-        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-          <a href="dashboard.html" class="btn btn-primary">Build Allergy Profile in Parent Portal →</a>
-          <button class="btn btn-secondary" onclick="showToast('Opening Pediatric Nutrition Hotline...')">Consult Nutrition Team</button>
+        <div style="display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 340px;">
+          <a href="dashboard.html" class="btn btn-primary" style="width: 100%; text-align: center; box-sizing: border-box; white-space: normal; word-break: break-word;">Build Allergy Parent Portal →</a>
+          <button class="btn btn-secondary" style="width: 100%; box-sizing: border-box;" onclick="showToast('Opening Pediatric Nutrition Hotline...')">Consult Nutrition Team</button>
         </div>
       </div>
 
@@ -455,8 +457,8 @@
             <a href="#" class="footer-social-icon" aria-label="Facebook" title="Facebook">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
-            <a href="#" class="footer-social-icon" aria-label="Twitter / X" title="Twitter / X">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            <a href="#" class="footer-social-icon" aria-label="X" title="X">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
             <a href="#" class="footer-social-icon" aria-label="YouTube" title="YouTube">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>

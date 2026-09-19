@@ -239,7 +239,7 @@ function renderOverview(c) {
     </div>
 
     <!-- Quick Actions & Weekly Preview -->
-    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 32px;">
+    <div class="overview-bottom-grid">
       <div class="dash-card">
         <div class="card-title">
           <span>This Week's Meal Plan Preview</span>
@@ -366,7 +366,7 @@ function renderDeliverySchedule(c) {
     <div class="dash-card">
       <div class="card-title">Upcoming Delivery Timeline</div>
       <div style="display: flex; flex-direction: column; gap: 20px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: var(--dash-bg); border-radius: 12px; border-left: 4px solid var(--dash-primary);">
+        <div class="delivery-row" style="border-left: 4px solid var(--dash-primary);">
           <div>
             <strong>THU — SEP 24, 2026</strong>
             <div style="font-size: 0.9rem; color: var(--dash-muted);">6 meals included • 123 Garden Lane</div>
@@ -377,7 +377,7 @@ function renderDeliverySchedule(c) {
           </div>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: var(--dash-bg); border-radius: 12px; border-left: 4px solid var(--dash-muted);">
+        <div class="delivery-row" style="border-left: 4px solid var(--dash-muted);">
           <div>
             <strong>THU — OCT 01, 2026</strong>
             <div style="font-size: 0.9rem; color: var(--dash-muted);">6 meals scheduled</div>
@@ -388,7 +388,7 @@ function renderDeliverySchedule(c) {
           </div>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: var(--dash-bg); border-radius: 12px; border-left: 4px solid var(--dash-muted);">
+        <div class="delivery-row" style="border-left: 4px solid var(--dash-muted);">
           <div>
             <strong>THU — OCT 08, 2026</strong>
             <div style="font-size: 0.9rem; color: var(--dash-muted);">6 meals scheduled</div>
@@ -518,7 +518,7 @@ function renderSubscription(c) {
         <span class="status-badge active">Active</span>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 24px;">
+      <div class="sub-plan-grid">
         <div>
           <h2>${dashState.subscriptionPlan}</h2>
           <p class="text-muted" style="margin-top: 8px;">12 meals per week • Flexible delivery schedule</p>
@@ -555,39 +555,41 @@ function renderPayments(c) {
         <button class="btn btn-outline" onclick="showDashToast('Payment method update drawer opened.')">Update Payment</button>
       </div>
 
-      <div style="display: flex; align-items: center; gap: 16px; padding: 20px; background: var(--dash-bg); border-radius: 12px; max-width: 480px; margin-bottom: 32px;">
-        <span style="font-size: 2rem;">💳</span>
-        <div>
+      <div class="payment-method-card">
+        <span style="font-size: 2rem; flex-shrink: 0;">💳</span>
+        <div style="min-width: 0;">
           <strong>Visa ending in 4821</strong>
-          <div style="font-size: 0.85rem; color: var(--dash-muted);">Expires 09/28 • Default Payment Method</div>
+          <div style="font-size: 0.85rem; color: var(--dash-muted); white-space: normal;">Expires 09/28 • Default Payment Method</div>
         </div>
       </div>
 
-      <div class="card-title">Billing History</div>
-      <table class="dash-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Amount</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Sep 17, 2026</td>
-            <td>Growing Table Weekly Subscription</td>
-            <td>$78.00</td>
-            <td><span class="status-badge delivered">Paid</span></td>
-          </tr>
-          <tr>
-            <td>Sep 10, 2026</td>
-            <td>Growing Table Weekly Subscription</td>
-            <td>$78.00</td>
-            <td><span class="status-badge delivered">Paid</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="card-title" style="margin-top: 24px;">Billing History</div>
+      <div class="dash-table-wrapper">
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sep 17, 2026</td>
+              <td>Growing Table Weekly Subscription</td>
+              <td>$78.00</td>
+              <td><span class="status-badge delivered">Paid</span></td>
+            </tr>
+            <tr>
+              <td>Sep 10, 2026</td>
+              <td>Growing Table Weekly Subscription</td>
+              <td>$78.00</td>
+              <td><span class="status-badge delivered">Paid</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   `;
 }
@@ -599,33 +601,35 @@ function renderOrderHistory(c) {
   c.innerHTML = `
     <div class="dash-card">
       <div class="card-title">Past Deliveries</div>
-      <table class="dash-table">
-        <thead>
-          <tr>
-            <th>Order ID</th>
-            <th>Date</th>
-            <th>Meals</th>
-            <th>Plan</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>#NN-1024</td>
-            <td>Sep 17, 2026</td>
-            <td>12 Meals</td>
-            <td>Growing Table</td>
-            <td><span class="status-badge delivered">Delivered</span></td>
-          </tr>
-          <tr>
-            <td>#NN-1018</td>
-            <td>Sep 10, 2026</td>
-            <td>12 Meals</td>
-            <td>Growing Table</td>
-            <td><span class="status-badge delivered">Delivered</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="dash-table-wrapper">
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date</th>
+              <th>Meals</th>
+              <th>Plan</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#NN-1024</td>
+              <td>Sep 17, 2026</td>
+              <td>12 Meals</td>
+              <td>Growing Table</td>
+              <td><span class="status-badge delivered">Delivered</span></td>
+            </tr>
+            <tr>
+              <td>#NN-1018</td>
+              <td>Sep 10, 2026</td>
+              <td>12 Meals</td>
+              <td>Growing Table</td>
+              <td><span class="status-badge delivered">Delivered</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   `;
 }
@@ -752,7 +756,7 @@ window.switchView = function(viewName) {
 
 window.handleSignOut = function() {
   showDashToast('Signing out...');
-  setTimeout(() => window.location.href = 'login.html', 1000);
+  setTimeout(() => window.location.href = 'index.html', 1000);
 };
 
 window.openSkipModal = function() {

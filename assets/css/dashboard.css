@@ -407,6 +407,19 @@ body.dash-body {
   margin-bottom: 32px;
   box-shadow: var(--shadow-dash);
 }
+/* Overview bottom section: Weekly Preview + Quick Actions */
+.overview-bottom-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 480px) {
+  .overview-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
 
 .card-title {
   font-size: 1.15rem;
@@ -479,9 +492,80 @@ body.dash-body {
   100% { box-shadow: 0 0 0 0 rgba(143, 175, 143, 0); }
 }
 
+/* Delivery Schedule Row */
+.delivery-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px;
+  background: var(--dash-bg);
+  border-radius: 12px;
+}
+
+.delivery-row > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.delivery-row > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .delivery-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .delivery-row > div:last-child {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .delivery-row .btn {
+    flex: 1;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+/* Payment & Subscription Cards */
+.payment-method-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--dash-bg);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--dash-border);
+}
+
+.sub-plan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
 /* Tables */
+.dash-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  border-radius: var(--radius-card);
+}
+
 .dash-table {
   width: 100%;
+  min-width: 560px;
   border-collapse: collapse;
   text-align: left;
 }
@@ -700,5 +784,135 @@ input:checked + .slider:before { transform: translateX(20px); }
 
   .dash-menu-toggle {
     display: block;
+  }
+}
+
+/* Mobile 480px — compact topbar */
+@media (max-width: 480px) {
+  .dash-topbar {
+    padding: 0 14px;
+  }
+
+  .topbar-left {
+    gap: 10px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .topbar-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+  }
+
+  .topbar-right {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .icon-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .topbar-right img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .dash-menu-toggle {
+    font-size: 1.2rem;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+}
+
+/* ============================================================
+   MOBILE 480px — Dashboard Overview Layout Fixes
+   ============================================================ */
+@media (max-width: 480px) {
+
+  /* Reduce content area padding */
+  .dash-content {
+    padding: 16px 12px;
+  }
+
+  /* Cards: reduce padding, tighter margin */
+  .dash-card {
+    padding: 18px 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Card title: stack label and action button vertically */
+  .card-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+
+  /* Card title button: full width */
+  .card-title .btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* KPI grid: 2 columns on mobile */
+  .kpi-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .kpi-card {
+    padding: 16px 12px;
+  }
+
+  /* Delivery timeline: shrink dots and text */
+  .delivery-timeline {
+    margin: 20px 0 8px;
+  }
+
+  .timeline-dot {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 0.85rem;
+  }
+
+  .timeline-step span {
+    font-size: 0.72rem !important;
+    text-align: center;
+  }
+
+  /* Alert banner: stack vertically */
+  .dash-card .btn-primary {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Tighter table cell padding for scrollable table */
+  .dash-table th,
+  .dash-table td {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  /* Payment method card mobile layout */
+  .payment-method-card {
+    padding: 14px 12px;
+    gap: 12px;
+  }
+
+  /* Subscription plan grid collapse to single column */
+  .sub-plan-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
