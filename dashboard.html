@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nourish Nest | Parent Portal Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="dash-body">
+
+  <div class="dash-layout">
+
+    <!-- 01. FIXED SIDEBAR -->
+    <aside class="dash-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;" title="Go to Nourish Nest Home">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#8FAF8F">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+          </svg>
+          <div>
+            <div class="sidebar-brand">NOURISH NEST</div>
+            <div style="font-size: 0.65rem; letter-spacing: 1.5px; color: #8FAF8F; text-transform: uppercase;">Parent Portal</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 11 MENU ITEMS -->
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-item">
+          <button data-view="overview" class="active">
+            <span>📊</span> Overview
+          </button>
+        </li>
+        <li class="sidebar-menu-item">
+          <button data-view="meals">
+            <span>🥣</span> Weekly Meals
+          </button>
+        </li>
+        <li class="sidebar-menu-item">
+          <button data-view="schedule">
+            <span>🚚</span> Delivery Schedule
+          </button>
+        </li>
+        <li class="sidebar-menu-item">
+          <button data-view="nutrition">
+            <span>📈</span> Nutrition
+          </button>
+        </li>
+        <li class="sidebar-menu-item">
+          <button data-view="allergies">
+            <span>🛡️</span> Allergies & Preferences
+          </button>
+        </li>
+        <li class="sidebar-menu-item">
+          <button data-view="subscription">
+            <span>💳</span> Subscription
+          </button>
+        </li>
+        <li class="sidebar-menu-item">
+          <button data-view="payments">
+            <span>🧾</span> Payments
+          </button>
+        </li>
+        <li class="sidebar-menu-item">
+          <button data-view="history">
+            <span>📦</span> Order History
+          </button>
+        </li>
+        <li class="sidebar-menu-item">
+          <button data-view="notifications">
+            <span>🔔</span> Notifications
+          </button>
+        </li>
+        <li class="sidebar-menu-item">
+          <button data-view="profile">
+            <span>👤</span> Profile Settings
+          </button>
+        </li>
+        <li class="sidebar-menu-item">
+          <button data-view="help">
+            <span>❓</span> Help & Support
+          </button>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <button class="btn-signout" onclick="handleSignOut()">
+          <span>🚪</span> Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- 02. MAIN CONTENT WRAPPER -->
+    <div class="dash-main">
+      
+      <!-- STICKY TOPBAR -->
+      <header class="dash-topbar">
+        <div class="topbar-left">
+          <button class="dash-menu-toggle" aria-label="Toggle Sidebar Menu">☰</button>
+          <div class="topbar-title" id="dash-page-title">Parent Portal Overview</div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Notification Bell -->
+          <button class="icon-btn" onclick="switchView('notifications')" title="Notifications" aria-label="Notifications">
+            🔔
+            <span class="badge-dot"></span>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button class="icon-btn dash-theme-btn" title="Toggle Theme" aria-label="Toggle Theme">
+            🌙
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="icon-btn dash-rtl-btn" title="Toggle RTL" aria-label="Toggle Direction">
+            🌐
+          </button>
+
+          <!-- Parent Avatar Thumbnail -->
+          <div style="display: flex; align-items: center; cursor: pointer;" onclick="switchView('profile')" title="Sarah Morgan Profile">
+            <img src="assets/images/avatar-parent-sarah-m.jpg" alt="Sarah Morgan" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; display: block; border: 2px solid var(--dash-primary);">
+          </div>
+        </div>
+      </header>
+
+      <!-- DYNAMIC DASHBOARD CONTAINER -->
+      <main class="dash-content" id="dash-main-content">
+        <!-- Rendered dynamically by assets/js/dashboard.js -->
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Nourish Nest Specialty Baby & Toddler Food</title>
+  <meta name="description" content="Explore rotating weekly organic meals designed for babies and toddlers. Filter by age stage, dietary preferences, and meal types.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+        </svg>
+        <div>
+          <span class="brand-title">NOURISH NEST</span>
+          <span class="brand-sub">BABY & TODDLER MEALS</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index2.html">Home 2</a></li>
+        <li><a href="about.html">Our Kitchen</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="allergies.html">Allergies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="dashboard.html" class="icon-circle-btn" title="Parent Portal Dashboard" aria-label="Parent Portal Dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="13" width="8" height="8" rx="2"/>
+            <rect x="3" y="13" width="8" height="8" rx="2"/>
+          </svg>
+        </a>
+        <button class="icon-circle-btn theme-toggle-btn" aria-label="Toggle Theme"></button>
+        <button class="icon-circle-btn rtl-toggle-btn" aria-label="Toggle Direction"></button>
+        <a href="login.html" class="btn btn-primary">Parent Login →</a>
+      </div>
+
+      <button class="hamburger" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index2.html">Home 2</a></li>
+      <li><a href="about.html">Our Kitchen</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="plans.html">Plans</a></li>
+      <li><a href="allergies.html">Allergies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-controls">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Parent Login →</a>
+      <div style="display: flex; gap: 12px; justify-content: center; margin-top: 12px;">
+        <a href="dashboard.html" class="icon-circle-btn" title="Parent Portal Dashboard" aria-label="Parent Portal Dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="13" width="8" height="8" rx="2"/>
+            <rect x="3" y="13" width="8" height="8" rx="2"/>
+          </svg>
+        </a>
+        <button class="icon-circle-btn theme-toggle-btn" aria-label="Toggle Theme"></button>
+        <button class="icon-circle-btn rtl-toggle-btn" aria-label="Toggle Direction"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU SECTION 01 — HERO -->
+  <section class="hero text-center">
+    <div class="container" style="max-width: 720px;">
+      <span class="section-tag">WEEKLY SELECTION</span>
+      <h1>Meals Made for Little Appetites.</h1>
+      <p class="text-muted" style="margin-top: 16px;">
+        Explore our rotating menu by age stage, meal type, and dietary preference. Click any meal for full ingredient breakdown.
+      </p>
+    </div>
+  </section>
+
+  <!-- MENU SECTION 02 — AGE STAGE & CATEGORY FILTER -->
+  <section class="section section-bg-alt">
+    <div class="container">
+      <div class="age-tabs meal-cat-filter">
+        <button class="tab-btn active" data-cat="all">All Meals</button>
+        <button class="tab-btn" data-cat="breakfast">Breakfast</button>
+        <button class="tab-btn" data-cat="lunch">Lunch</button>
+        <button class="tab-btn" data-cat="dinner">Dinner</button>
+        <button class="tab-btn" data-cat="snacks">Snacks</button>
+      </div>
+
+      <!-- MENU SECTION 03 — MEAL COLLECTION CATALOG -->
+      <div class="meal-grid">
+
+        <div class="meal-card" data-category="lunch" data-name="Pumpkin Lentil Mash" data-stage="6–8 Months" data-ingredients="Pumpkin, Red Lentils, Extra Virgin Olive Oil" data-texture="Smooth Mash">
+          <div class="meal-card-img"><img src="assets/images/meal-pumpkin-lentil-mash.jpg" alt="Pumpkin Lentil Mash"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">6–8 Months • Lunch</span>
+            <h4>Pumpkin Lentil Mash</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Pumpkin, red lentils, olive oil</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Smooth Mash</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="breakfast" data-name="Banana Oat Bowl" data-stage="9–12 Months" data-ingredients="Rolled Oats, Banana, Ceylon Cinnamon" data-texture="Soft Porridge">
+          <div class="meal-card-img"><img src="assets/images/meal-banana-oat-porridge.jpg" alt="Banana Oat Bowl"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">9–12 Months • Breakfast</span>
+            <h4>Banana Oat Bowl</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Rolled oats, organic banana, cinnamon</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Soft Porridge</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="lunch" data-name="Sweet Potato & Rice" data-stage="9–12 Months" data-ingredients="Sweet Potato, Jasmine Rice, Coconut Milk" data-texture="Mashed & Soft">
+          <div class="meal-card-img"><img src="assets/images/meal-sweet-potato-rice.jpg" alt="Sweet Potato & Rice"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">9–12 Months • Lunch</span>
+            <h4>Sweet Potato & Rice</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Sweet potato, jasmine rice, coconut milk</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Soft Mash</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="dinner" data-name="Soft Vegetable Rice" data-stage="12–24 Months" data-ingredients="Zucchini, Quinoa, Sweet Peas" data-texture="Toddler Soft">
+          <div class="meal-card-img"><img src="assets/images/meal-zucchini-quinoa-mash.jpg" alt="Soft Vegetable Rice"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">12–24 Months • Dinner</span>
+            <h4>Soft Zucchini Quinoa Mash</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Zucchini, quinoa, sweet peas</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Soft Mash</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="dinner" data-name="Chicken & Sweet Potato" data-stage="12–24 Months" data-ingredients="Free-range Chicken, Sweet Potato, Rosemary" data-texture="Soft Tender Bites">
+          <div class="meal-card-img"><img src="assets/images/meal-chicken-sweet-potato.jpg" alt="Chicken & Sweet Potato"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">12–24 Months • Dinner</span>
+            <h4>Chicken & Sweet Potato</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Free-range chicken, sweet potato</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Soft Tender Bites</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="dinner" data-name="Mini Toddler Ravioli" data-stage="2–4 Years" data-ingredients="Whole Wheat Pasta, Spinach, Organic Ricotta" data-texture="Finger Food Soft">
+          <div class="meal-card-img"><img src="assets/images/meal-toddler-ravioli.jpg" alt="Mini Toddler Ravioli"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">2–4 Years • Dinner</span>
+            <h4>Mini Toddler Ravioli</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Whole wheat pasta, spinach, ricotta</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Finger Food</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="breakfast" data-name="Avocado & Sweet Pea Puree" data-stage="4–6 Months" data-ingredients="Organic Avocado, Sweet Green Peas, Mint" data-texture="Silk Purée">
+          <div class="meal-card-img"><img src="assets/images/meal-avocado-sweet-pea.jpg" alt="Avocado & Sweet Pea Puree"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">4–6 Months • Breakfast</span>
+            <h4>Avocado & Sweet Pea Puree</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Organic avocado, sweet green peas, mint</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Silk Purée</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="breakfast" data-name="Wild Berry Quinoa Porridge" data-stage="7–9 Months" data-ingredients="Organic Blueberries, White Quinoa, Coconut Milk" data-texture="Warm Soft Mash">
+          <div class="meal-card-img"><img src="assets/images/meal-wild-berry-quinoa.jpg" alt="Wild Berry Quinoa Porridge"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">7–9 Months • Breakfast</span>
+            <h4>Wild Berry Quinoa Porridge</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Wild blueberries, white quinoa, coconut milk</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Warm Soft Mash</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="lunch" data-name="Wild Salmon & Pea Purée" data-stage="7–9 Months" data-ingredients="Wild Alaskan Salmon, Sweet Garden Peas, Dill Steam" data-texture="Velvet Purée">
+          <div class="meal-card-img"><img src="assets/images/meal-salmon-pea-puree.jpg" alt="Wild Salmon & Pea Purée"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">7–9 Months • Lunch</span>
+            <h4>Wild Salmon & Pea Purée</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Wild salmon, garden sweet peas, mild dill</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Velvet Purée</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="dinner" data-name="Toddler Turkey & Carrot Bites" data-stage="2–4 Years" data-ingredients="Free-Range Turkey, Steamed Carrots, Thyme Leaves" data-texture="Tender Soft Bites">
+          <div class="meal-card-img"><img src="assets/images/meal-turkey-carrot-bites.jpg" alt="Toddler Turkey & Carrot Bites"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">2–4 Years • Dinner</span>
+            <h4>Toddler Turkey & Carrot Bites</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Free-range turkey, steam carrots, thyme</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Tender Soft Bites</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="snacks" data-name="Organic Mango Chia Pudding" data-stage="10–12 Months" data-ingredients="Fresh Alphonso Mango, Hydrated Chia Seeds, Oat Milk" data-texture="Soft Gel Mastication">
+          <div class="meal-card-img"><img src="assets/images/meal-mango-chia-puree.jpg" alt="Organic Mango Chia Pudding"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">10–12 Months • Snacks</span>
+            <h4>Organic Mango Chia Pudding</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Fresh mango puree, chia seeds, oat milk</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Soft Gel Mastication</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="snacks" data-name="Baked Cinnamon Apple Wedges" data-stage="12–24 Months" data-ingredients="Fuji Apples, Ceylon Cinnamon, Organic Butter" data-texture="Soft Finger Food">
+          <div class="meal-card-img"><img src="assets/images/meal-apple-cinnamon-wedges.jpg" alt="Baked Cinnamon Apple Wedges"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">12–24 Months • Snacks</span>
+            <h4>Baked Cinnamon Apple Wedges</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Baking Fuji apples, Ceylon cinnamon</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Soft Finger Food</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="dinner" data-name="Broccoli Cheddar Bites" data-stage="2–4 Years" data-ingredients="Organic Broccoli, Melted Cheddar, Whole Grain Tots" data-texture="Golden Tots">
+          <div class="meal-card-img"><img src="assets/images/meal-broccoli-cheddar-bites.jpg" alt="Broccoli Cheddar Bites"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">2–4 Years • Dinner</span>
+            <h4>Broccoli Cheddar Bites</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Organic broccoli florets, golden cheddar</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Finger Food Tots</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="lunch" data-name="Beetroot & Pear Purée" data-stage="4–6 Months" data-ingredients="Organic Red Beetroot, Ripe Pear Reduction" data-texture="Smooth Puree">
+          <div class="meal-card-img"><img src="assets/images/meal-beetroot-pear-puree.jpg" alt="Beetroot & Pear Purée"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">4–6 Months • Lunch</span>
+            <h4>Beetroot & Pear Purée</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Organic beetroot, sweet ripe pear</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Silk Purée</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="breakfast" data-name="Peach Banana Custard" data-stage="4–6 Months" data-ingredients="Ripe Peach, Organic Banana, Coconut Milk" data-texture="Creamy Custard">
+          <div class="meal-card-img"><img src="assets/images/meal-peach-banana-custard.jpg" alt="Peach Banana Custard"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">4–6 Months • Breakfast</span>
+            <h4>Peach Banana Custard</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Organic peach, banana, coconut milk</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Creamy Custard</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="lunch" data-name="Butternut Chickpea Purée" data-stage="7–9 Months" data-ingredients="Butternut Squash, Golden Chickpeas, Olive Oil" data-texture="Velvet Purée">
+          <div class="meal-card-img"><img src="assets/images/meal-butternut-chickpea-puree.jpg" alt="Butternut Chickpea Purée"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">7–9 Months • Lunch</span>
+            <h4>Butternut Chickpea Purée</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Roasted butternut squash, chickpea</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Velvet Purée</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="dinner" data-name="Spinach & Apple Risotto" data-stage="12–24 Months" data-ingredients="Organic Spinach, Apple, Arborio Rice" data-texture="Creamy Risotto">
+          <div class="meal-card-img"><img src="assets/images/meal-spinach-apple-risotto.jpg" alt="Spinach & Apple Risotto"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">12–24 Months • Dinner</span>
+            <h4>Spinach & Apple Risotto</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Organic spinach, sweet apple, arborio rice</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Creamy Risotto</span>
+          </div>
+        </div>
+
+        <div class="meal-card" data-category="lunch" data-name="Harvest Variety Box" data-stage="12–24 Months" data-ingredients="Curated Seasonal Purees & Mashes" data-texture="Weekly Sampler">
+          <div class="meal-card-img"><img src="assets/images/meal-harvest-variety-box.jpg" alt="Harvest Variety Box"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">12–24 Months • Sampler</span>
+            <h4>Harvest Variety Sampler Box</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">6 seasonal purees, mashes & soft bites</p>
+            <span style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600;">Texture: Sampler Variety</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION — NUTRITIONAL MACRO & ALLERGEN PROFILER (UNIQUE SECTION) -->
+  <section class="section menu-nutrient-profiler-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag glow-tag">PEDIATRIC PROFILER</span>
+        <h2>Pediatrician Macro & Allergen Customizer</h2>
+        <p class="text-muted" style="max-width: 680px; margin: 12px auto 0;">
+          Select your child's primary health target to view macro-nutrient ratios, key superfoods, and certified zero-allergen guarantees.
+        </p>
+      </div>
+
+      <div class="menu-profiler-grid">
+        
+        <!-- Left Column: Priority Filter Buttons -->
+        <div class="priority-pill-deck" role="tablist">
+          <button class="priority-pill-btn active" data-priority="brain" role="tab" aria-selected="true">
+            <span class="priority-pill-icon">🧠</span>
+            <div class="priority-pill-info">
+              <h4>Brain DHA & Focus</h4>
+              <span>Omega-3s, Avocado & Blueberries</span>
+            </div>
+          </button>
+
+          <button class="priority-pill-btn" data-priority="immune" role="tab" aria-selected="false">
+            <span class="priority-pill-icon">🛡️</span>
+            <div class="priority-pill-info">
+              <h4>Immune Defense</h4>
+              <span>Vitamin C, Beta-Carotene & Zinc</span>
+            </div>
+          </button>
+
+          <button class="priority-pill-btn" data-priority="bone" role="tab" aria-selected="false">
+            <span class="priority-pill-icon">🦴</span>
+            <div class="priority-pill-info">
+              <h4>Bone & Growth Protein</h4>
+              <span>Bio-available Calcium & Iron</span>
+            </div>
+          </button>
+
+          <button class="priority-pill-btn" data-priority="gut" role="tab" aria-selected="false">
+            <span class="priority-pill-icon">🌿</span>
+            <div class="priority-pill-info">
+              <h4>Gentle Gut & Prebiotic</h4>
+              <span>Soluble Pectin Fiber & Oats</span>
+            </div>
+          </button>
+        </div>
+
+        <!-- Right Column: Macro Radar & Allergen Display Card -->
+        <div class="macro-radar-card">
+          <div class="macro-radar-header">
+            <div>
+              <span class="section-tag profiler-tag" id="profilerBadge">Cognitive Priority</span>
+              <h3 id="profilerTitle" class="profiler-title">Brain DHA & Cognitive Development</h3>
+            </div>
+            <span class="macro-badge">Pediatrician Formulation</span>
+          </div>
+
+          <!-- Animated Macro Bars -->
+          <div class="macro-bars-stack">
+            <div class="macro-bar-item">
+              <div class="macro-bar-label">
+                <span class="macro-bar-name">Complex Carbohydrate Energy</span>
+                <strong id="carbsVal" class="macro-bar-value">45% Complex Carbs</strong>
+              </div>
+              <div class="macro-bar-track">
+                <div class="macro-bar-fill" id="carbsBar" style="width: 45%;"></div>
+              </div>
+            </div>
+
+            <div class="macro-bar-item">
+              <div class="macro-bar-label">
+                <span class="macro-bar-name">Essential Brain Fatty Acids (DHA)</span>
+                <strong id="fatVal" class="macro-bar-value">35% Healthy Fats (DHA)</strong>
+              </div>
+              <div class="macro-bar-track">
+                <div class="macro-bar-fill" id="fatBar" style="width: 35%;"></div>
+              </div>
+            </div>
+
+            <div class="macro-bar-item">
+              <div class="macro-bar-label">
+                <span class="macro-bar-name">Bioactive Cellular Growth Protein</span>
+                <strong id="proteinVal" class="macro-bar-value">20% Bio-Protein</strong>
+              </div>
+              <div class="macro-bar-track">
+                <div class="macro-bar-fill" id="proteinBar" style="width: 20%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Allergen Shield Wrap -->
+          <div class="allergen-shield-wrap">
+            <span class="allergen-shield-title">Featured Superfood Drivers in This Profile:</span>
+            <div class="allergen-tags-grid" id="allergenTagsGrid">
+              <span class="allergen-tag"><span>✨</span> 🥑 Organic Butter Avocado</span>
+              <span class="allergen-tag"><span>✨</span> 🐟 Wild Alaskan Salmon</span>
+              <span class="allergen-tag"><span>✨</span> 🌰 Walnut Oil Blend</span>
+              <span class="allergen-tag"><span>✨</span> 🫐 Wild Blueberries</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons Deck -->
+          <div class="macro-radar-actions">
+            <button class="btn btn-primary btn-shine" id="filterNutrientBtn" type="button">
+              ✨ Filter Menu by Nutritional Goal
+            </button>
+            <a href="allergies.html" class="btn btn-outline profiler-guide-btn">
+              Full Allergy Guide →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION 05 — SAMPLER PACK & PRE-FOOTER HUB -->
+  <section class="section section-bg-alt text-center">
+    <div class="container">
+      <span class="section-tag">FIRST SPOONS & SAMPLER PACKS</span>
+      <h2>Discover Your Baby's Favorite Organic Recipes with a Trial Sampler Box</h2>
+      <p class="text-muted" style="max-width: 680px; margin: 16px auto 0;">
+        Not sure which meals your little one will love best? Try a curated 6-meal trial pack tailored for early tasters, textured mashes, or toddler finger foods.
+      </p>
+
+      <div class="assurance-grid" style="margin: 44px 0 48px;">
+        
+        <div class="assurance-card">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">🥣</div>
+            <h3 style="margin-bottom: 10px; font-size: 1.25rem;">Stage 1 Purée Sampler</h3>
+            <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+              6 ultra-smooth single-ingredient jars (Carrot, Sweet Potato, Avocado, Apple, Pumpkin, Oats) designed for gentle first tastes.
+            </p>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="plans.html" class="btn btn-outline" style="width: 100%;">Try Stage 1 Sampler →</a>
+          </div>
+        </div>
+
+        <div class="assurance-card">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">🥑</div>
+            <h3 style="margin-bottom: 10px; font-size: 1.25rem;">Stage 2 Mash Discovery</h3>
+            <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+              6 velvet combined mashes featuring wild Alaskan salmon, blueberry swirls, and quinoa risotto for expanding palates.
+            </p>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="plans.html" class="btn btn-outline" style="width: 100%;">Try Stage 2 Sampler →</a>
+          </div>
+        </div>
+
+        <div class="assurance-card">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">🍝</div>
+            <h3 style="margin-bottom: 10px; font-size: 1.25rem;">Stage 4 Toddler Feast</h3>
+            <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+              6 soft finger-food toddler meals including spinach ravioli, free-range turkey meatballs, and steamed broccoli florets.
+            </p>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="plans.html" class="btn btn-outline" style="width: 100%;">Try Toddler Sampler →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Integrated Action Banner Bar (Floating overlapping footer) -->
+      <div class="cta-floating-banner">
+        <div>
+          <span class="section-tag" style="margin-bottom: 6px;">FLEXIBLE WEEKLY PLANS</span>
+          <h3 style="font-size: 1.35rem; margin-bottom: 6px;">Want Meals Planned Around Your Family's Schedule?</h3>
+          <p class="text-muted" style="font-size: 0.92rem;">Select a weekly plan and customize your menu anytime in your Parent Portal.</p>
+        </div>
+        <a href="plans.html" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.05rem;">View Subscription Plans →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand-logo">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
+            <div>
+              <span class="brand-title" style="color: #FFFFFF;">NOURISH NEST</span>
+              <span class="brand-sub" style="color: var(--color-primary);">BABY & TODDLER MEALS</span>
+            </div>
+          </a>
+          <p style="color: #D1C5B4; font-size: 0.9rem; line-height: 1.6;">
+            Specialty Baby Food & Toddler Meal Delivery thoughtfully prepared for growing little ones. Made with organic ingredients and delivered fresh to your door every week.
+          </p>
+
+          <!-- Social Icons Bar -->
+          <div class="footer-social-bar">
+            <a href="#" class="footer-social-icon" aria-label="Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Twitter / X" title="Twitter / X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>EXPLORE</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Our Kitchen</a></li>
+            <li><a href="menu.html">Weekly Menu</a></li>
+            <li><a href="plans.html">Subscription Plans</a></li>
+            <li><a href="allergies.html">Allergy Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>PARENT PORTAL</h5>
+          <ul>
+            <li><a href="login.html">Parent Login</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html">Account Help</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>CONTACT</h5>
+          <ul>
+            <li><span style="color: #D1C5B4;">+1 (800) 555-NEST</span></li>
+            <li><span style="color: #D1C5B4;">hello@nourishnest.com</span></li>
+            <li><span style="color: #D1C5B4;">Mon – Fri: 8am – 5pm</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Nourish Nest. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Allergy Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="public-modal">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close Modal">×</button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

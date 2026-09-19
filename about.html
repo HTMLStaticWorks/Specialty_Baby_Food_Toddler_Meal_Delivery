@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Kitchen | Nourish Nest Specialty Baby Food</title>
+  <meta name="description" content="Learn about the Nourish Nest kitchen philosophy, small batch organic cooking process, and food safety standards.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+        </svg>
+        <div>
+          <span class="brand-title">NOURISH NEST</span>
+          <span class="brand-sub">BABY & TODDLER MEALS</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index2.html">Home 2</a></li>
+        <li><a href="about.html" class="active">Our Kitchen</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="allergies.html">Allergies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="dashboard.html" class="icon-circle-btn" title="Parent Portal Dashboard" aria-label="Parent Portal Dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="13" width="8" height="8" rx="2"/>
+            <rect x="3" y="13" width="8" height="8" rx="2"/>
+          </svg>
+        </a>
+        <button class="icon-circle-btn theme-toggle-btn" aria-label="Toggle Theme"></button>
+        <button class="icon-circle-btn rtl-toggle-btn" aria-label="Toggle Direction"></button>
+        <a href="login.html" class="btn btn-primary">Parent Login →</a>
+      </div>
+
+      <button class="hamburger" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index2.html">Home 2</a></li>
+      <li><a href="about.html" class="active">Our Kitchen</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="plans.html">Plans</a></li>
+      <li><a href="allergies.html">Allergies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-controls">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Parent Login →</a>
+      <div style="display: flex; gap: 12px; justify-content: center; margin-top: 12px;">
+        <a href="dashboard.html" class="icon-circle-btn" title="Parent Portal Dashboard" aria-label="Parent Portal Dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="13" width="8" height="8" rx="2"/>
+            <rect x="3" y="13" width="8" height="8" rx="2"/>
+          </svg>
+        </a>
+        <button class="icon-circle-btn theme-toggle-btn" aria-label="Toggle Theme"></button>
+        <button class="icon-circle-btn rtl-toggle-btn" aria-label="Toggle Direction"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION 01 — HERO -->
+  <section class="hero text-center">
+    <div class="container" style="max-width: 900px;">
+      <span class="section-tag">OUR KITCHEN STORY</span>
+      <h1>Thoughtful Food Starts in a Thoughtful Kitchen.</h1>
+      <p class="text-muted" style="margin-top: 16px; margin-bottom: 28px;">
+        We design our meals around simple ingredients, careful preparation, and the practical needs of busy families.
+      </p>
+      <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); max-height: 420px;">
+        <img src="assets/images/hero-kitchen-chef.jpg" alt="Pediatric Chef Plating Organic Baby Meals" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION 02 — KITCHEN PROCESS TIMELINE -->
+  <section class="section section-bg-alt">
+    <div class="container text-center">
+      <span class="section-tag">STEP-BY-STEP</span>
+      <h2>Our Kitchen Preparation Journey</h2>
+      <p class="text-muted" style="max-width: 600px; margin: 12px auto 0;">From fresh organic harvests to your refrigerator shelf.</p>
+
+      <div class="journey-timeline-rich">
+        
+        <!-- Step 1 -->
+        <div class="journey-step-card">
+          <div class="journey-step-header">
+            <span class="journey-step-num">01</span>
+            <div class="journey-step-svg-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <span class="journey-step-tag">100% Organic Sourcing</span>
+            <h4>1. Organic Farm Harvest</h4>
+            <p>Direct partnerships with certified organic family farms. Produce is picked fresh within 24 hours of small-batch cooking.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="journey-step-card">
+          <div class="journey-step-header">
+            <span class="journey-step-num">02</span>
+            <div class="journey-step-svg-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <span class="journey-step-tag">Ozonated Rinse</span>
+            <h4>2. Micro-Bubble Prep</h4>
+            <p>Triple cold-water micro-bubble washing removes soil particles and impurities with zero synthetic chemicals.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="journey-step-card">
+          <div class="journey-step-header">
+            <span class="journey-step-num">03</span>
+            <div class="journey-step-svg-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <span class="journey-step-tag">98°C Soft Steam</span>
+            <h4>3. Gentle Steam Cooking</h4>
+            <p>Precision low-temperature steaming retains cell structure, vibrant natural colors, and essential water-soluble B vitamins.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="journey-step-card">
+          <div class="journey-step-header">
+            <span class="journey-step-num">04</span>
+            <div class="journey-step-svg-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/>
+                <line x1="12" y1="3" x2="12" y2="12"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <span class="journey-step-tag">Pediatric Textures</span>
+            <h4>4. Milestone Portioning</h4>
+            <p>Mashed, puréed, or diced into exact pediatrician-approved developmental textures tailored for 4–24+ months.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="journey-step-card">
+          <div class="journey-step-header">
+            <span class="journey-step-num">05</span>
+            <div class="journey-step-svg-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <span class="journey-step-tag">Flash Chilling</span>
+            <h4>5. Rapid Sealing & Lab Audit</h4>
+            <p>Flash chilled to 3°C to lock in nutrient density before being sealed in recyclable, 100% BPA-free glass jars.</p>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="journey-step-card">
+          <div class="journey-step-header">
+            <span class="journey-step-num">06</span>
+            <div class="journey-step-svg-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="2" ry="2"/>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <span class="journey-step-tag">Chilled Delivery</span>
+            <h4>6. Doorstep Fresh Arrival</h4>
+            <p>Shipped weekly in 100% compostable thermal insulation boxes keeping meals fresh for up to 7 days in your fridge.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR KITCHEN SECTION — FARM-TO-JAR QUALITY & STEAM INNOVATION (UNIQUE SECTION) -->
+  <section class="section kitchen-quality-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag glow-tag">KITCHEN EXCELLENCE</span>
+        <h2>Precision Steam Cooking & Safety Innovation</h2>
+        <p class="text-muted" style="max-width: 680px; margin: 12px auto 0;">
+          Explore how our custom low-temperature steam chambers and triple lab testing preserve raw nutrients while ensuring zero heavy metal contamination.
+        </p>
+      </div>
+
+      <div class="kitchen-quality-grid">
+        
+        <!-- Left Column: Interactive Animated Steam Chamber Gauge -->
+        <div class="steam-chamber-card">
+          <div class="steam-chamber-bg-glow"></div>
+          
+          <div class="steam-dial-display">
+            <div>
+              <span class="temp-label">STEAM TEMPERATURE</span>
+              <div class="temp-number" id="kitchenTempDisplay">98°C Soft Thermal Steam</div>
+            </div>
+            <div class="steam-temp-badge">
+              <span class="steam-icon-pulse" id="kitchenPillarIcon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v4M8 4v2M16 4v2M4 11h16a1 1 0 0 1 1 1v2a7 7 0 0 1-7 7H10a7 7 0 0 1-7-7v-2a1 1 0 0 1 1-1z"/>
+                </svg>
+              </span>
+              <span style="font-weight: 600; font-size: 0.9rem;" id="kitchenPillarBadge">Gentle Steaming</span>
+            </div>
+          </div>
+
+          <div class="steam-metrics-list" id="kitchenMetricList">
+            <div class="steam-metric-row">
+              <div class="metric-title-wrap">
+                <span>Vitamin C Retention Rate</span>
+              </div>
+              <span class="metric-status-tag">98.4% Preserved</span>
+            </div>
+
+            <div class="steam-metric-row">
+              <div class="metric-title-wrap">
+                <span>Heavy Metal & Pesticide Audit</span>
+              </div>
+              <span class="metric-status-tag">100% Passed</span>
+            </div>
+
+            <div class="steam-metric-row">
+              <div class="metric-title-wrap">
+                <span>Small-Batch Hydration Level</span>
+              </div>
+              <span class="metric-status-tag">Optimal Soft Texture</span>
+            </div>
+          </div>
+
+          <div class="steam-card-footer">
+            <div class="steam-note-text" id="kitchenNoteText">
+              "Steam cooking locks in essential water-soluble B vitamins without leaching nutrient water."
+            </div>
+            <button class="btn btn-shine steam-inspect-btn" id="inspectKitchenBatchBtn" type="button">
+              Inspect Lab Data →
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Pillar Cards -->
+        <div class="kitchen-pillars-deck" role="tablist">
+          <div class="pillar-interactive-card active" data-pillar="1" role="tab" aria-selected="true">
+            <div class="pillar-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            </div>
+            <div class="pillar-card-body">
+              <h4>100% Certified Organic Farm Sourcing</h4>
+              <p>Direct partnerships with regional regenerative farms. Every harvest is harvested at peak maturity within 24 hours of prep.</p>
+            </div>
+          </div>
+
+          <div class="pillar-interactive-card" data-pillar="2" role="tab" aria-selected="false">
+            <div class="pillar-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v4M8 4v2M16 4v2M4 11h16a1 1 0 0 1 1 1v2a7 7 0 0 1-7 7H10a7 7 0 0 1-7-7v-2a1 1 0 0 1 1-1z"/>
+              </svg>
+            </div>
+            <div class="pillar-card-body">
+              <h4>Gentle Steam Thermal Cooking</h4>
+              <p>Low-temperature pressure steaming preserves natural cell walls, vibrant colors, and fragile micronutrients like folate and iron.</p>
+            </div>
+          </div>
+
+          <div class="pillar-interactive-card" data-pillar="3" role="tab" aria-selected="false">
+            <div class="pillar-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <div class="pillar-card-body">
+              <h4>Triple-Filter Safety & Heavy Metal Testing</h4>
+              <p>Independent third-party laboratory screening for lead, arsenic, cadmium, and pesticides before any jar is packed.</p>
+            </div>
+          </div>
+
+          <div class="pillar-interactive-card" data-pillar="4" role="tab" aria-selected="false">
+            <div class="pillar-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="2" x2="12" y2="22"/>
+                <line x1="20" y1="12" x2="4" y2="12"/>
+                <line x1="17.66" y1="6.34" x2="6.34" y2="17.66"/>
+                <line x1="17.66" y1="17.66" x2="6.34" y2="6.34"/>
+              </svg>
+            </div>
+            <div class="pillar-card-body">
+              <h4>Flash Chilling & Eco Cold-Chain Delivery</h4>
+              <p>Rapid cooling to 3°C prevents enzyme breakdown. Shipped in 100% compostable thermal insulation boxes.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION 03 — OUR FOOD PRINCIPLES -->
+  <section class="section principles-section">
+    <div class="container split-grid principles-split-container">
+      <div class="split-image principles-image-wrapper">
+        <img src="assets/images/quality-kitchen-prep.jpg" alt="Chef preparing fresh organic food in kitchen" class="principles-img">
+        <div class="principles-img-badge badge-top">
+          <span class="badge-icon">🌿</span>
+          <div class="badge-text">
+            <strong>100% Organic</strong>
+            <small>Certified Farm Sourcing</small>
+          </div>
+        </div>
+        <div class="principles-img-badge badge-bottom">
+          <span class="badge-icon">✨</span>
+          <div class="badge-text">
+            <strong>Zero Additives</strong>
+            <small>Pure & Natural Always</small>
+          </div>
+        </div>
+      </div>
+      <div class="principles-content">
+        <span class="section-tag">CORE PRINCIPLES</span>
+        <h2 class="principles-main-title">What Guides Every Meal We Make</h2>
+        <p class="principles-lead">
+          We believe feeding your baby should be simple, nutrient-rich, and completely transparent. Every jar and bowl is crafted around four foundational promises to your family:
+        </p>
+
+        <div class="principles-cards-grid">
+          <div class="principle-card">
+            <div class="principle-card-icon color-leaf">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            </div>
+            <div class="principle-card-body">
+              <h3>Simple Ingredients</h3>
+              <p>Clean, single- & multi-origin produce without artificial preservatives, added sodium, or synthetic fillers.</p>
+            </div>
+          </div>
+
+          <div class="principle-card">
+            <div class="principle-card-icon color-texture">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 3"/>
+              </svg>
+            </div>
+            <div class="principle-card-body">
+              <h3>Age-Stage Textures</h3>
+              <p>Specifically adapted purees, velvety mashes, and soft bite-sized cubes tuned to early developmental milestones.</p>
+            </div>
+          </div>
+
+          <div class="principle-card">
+            <div class="principle-card-icon color-shield">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <div class="principle-card-body">
+              <h3>Allergy Control</h3>
+              <p>Rigorous allergen-isolated prep lines, clear package labeling, and customizable parent preference filtering.</p>
+            </div>
+          </div>
+
+          <div class="principle-card">
+            <div class="principle-card-icon color-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </div>
+            <div class="principle-card-body">
+              <h3>Practical Planning</h3>
+              <p>Freshly chilled weekly meal boxes pre-portioned to save busy parents hours of cooking & cleanup each week.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION 04 — KITCHEN QUALITY ASSURANCE & PARENT TRANSPARENCY HUB -->
+  <section class="section section-bg-alt text-center">
+    <div class="container">
+      <span class="section-tag">KITCHEN TRANSPARENCY & TOURS</span>
+      <h2>Experience Our Organic Kitchen Standards & Parent Transparency Guarantee</h2>
+      <p class="text-muted" style="max-width: 680px; margin: 16px auto 0;">
+        From small-batch steam ovens to certified lab screens, explore the rigorous standards behind every jar and meal box we deliver.
+      </p>
+
+      <div class="assurance-grid" style="margin: 44px 0 48px;">
+        
+        <div class="assurance-card">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">🌿</div>
+            <h3 style="margin-bottom: 10px; font-size: 1.25rem;">100% USDA Organic Sourcing</h3>
+            <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+              Direct partnerships with certified organic family farms ensuring non-GMO, zero synthetic pesticide produce harvested within 24 hours of small-batch cooking.
+            </p>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="menu.html" class="btn btn-outline" style="width: 100%;">Review Sourcing Standards →</a>
+          </div>
+        </div>
+
+        <div class="assurance-card">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">🔬</div>
+            <h3 style="margin-bottom: 10px; font-size: 1.25rem;">Triple Lab Screened Batches</h3>
+            <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+              Every batch undergoes independent laboratory testing for lead, heavy metals, pesticides, and bacterial purity before sealing and rapid flash-chilling.
+            </p>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="allergies.html" class="btn btn-outline" style="width: 100%;">View Lab Standards →</a>
+          </div>
+        </div>
+
+        <div class="assurance-card">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">🏡</div>
+            <h3 style="margin-bottom: 10px; font-size: 1.25rem;">Kitchen Tours & Consultations</h3>
+            <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+              Parent transparency is our priority. Schedule an in-person walk-through of our Atelier District kitchen facility or connect 1-on-1 with our culinary team.
+            </p>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="contact.html" class="btn btn-outline" style="width: 100%;">Book Kitchen Tour →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pediatric Chef Tasting Feature Card -->
+      <div style="margin-bottom: 48px; border-radius: var(--radius-lg); overflow: hidden; background: var(--bg-surface); border: 1px solid var(--border-color); display: grid; grid-template-columns: 1fr 1fr; align-items: center; text-align: left;">
+        <div style="height: 100%; min-height: 260px;">
+          <img src="assets/images/quality-pediatric-chef-tasting.jpg" alt="Pediatric Nutritionist Quality Control Tasting" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div style="padding: 36px;">
+          <span class="section-tag">CLINICAL QUALITY CONTROL</span>
+          <h3 style="font-size: 1.5rem; margin-top: 8px; margin-bottom: 12px;">Pediatrician & Chef Tasting Validation</h3>
+          <p class="text-muted" style="font-size: 0.92rem; line-height: 1.6;">
+            Before any recipe enters production, our pediatric nutritionists and culinary chefs sample every batch for flavor harmony, ideal viscosity, and micro-nutrient purity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Integrated Action Banner Bar (Floating overlapping footer) -->
+      <div class="cta-floating-banner">
+        <div>
+          <span class="section-tag" style="margin-bottom: 6px;">EXPLORE ROTATING RECIPES</span>
+          <h3 style="font-size: 1.35rem; margin-bottom: 6px;">See What's Cooking on the Menu This Week</h3>
+          <p class="text-muted" style="font-size: 0.92rem;">Discover our organic purées, soft mashes, and toddler meal creations.</p>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="menu.html" class="btn btn-primary" style="padding: 16px 32px;">Explore Weekly Menu →</a>
+          <button class="btn btn-secondary" onclick="showToast('Opening Kitchen Facility Schedule...')">Tour Facility</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand-logo">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
+            <div>
+              <span class="brand-title" style="color: #FFFFFF;">NOURISH NEST</span>
+              <span class="brand-sub" style="color: var(--color-primary);">BABY & TODDLER MEALS</span>
+            </div>
+          </a>
+          <p style="color: #D1C5B4; font-size: 0.9rem; line-height: 1.6;">
+            Specialty Baby Food & Toddler Meal Delivery thoughtfully prepared for growing little ones. Made with organic ingredients and delivered fresh to your door every week.
+          </p>
+
+          <!-- Social Icons Bar -->
+          <div class="footer-social-bar">
+            <a href="#" class="footer-social-icon" aria-label="Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Twitter / X" title="Twitter / X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>EXPLORE</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Our Kitchen</a></li>
+            <li><a href="menu.html">Weekly Menu</a></li>
+            <li><a href="plans.html">Subscription Plans</a></li>
+            <li><a href="allergies.html">Allergy Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>PARENT PORTAL</h5>
+          <ul>
+            <li><a href="login.html">Parent Login</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html">Account Help</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>CONTACT</h5>
+          <ul>
+            <li><span style="color: #D1C5B4;">+1 (800) 555-NEST</span></li>
+            <li><span style="color: #D1C5B4;">hello@nourishnest.com</span></li>
+            <li><span style="color: #D1C5B4;">Mon – Fri: 8am – 5pm</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Nourish Nest. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Allergy Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nourish Nest | Specialty Baby Food & Toddler Meal Delivery</title>
+  <meta name="description" content="Wholesome little meals thoughtfully prepared for growing babies and toddlers. Organized by developmental age stage with allergy-aware weekly subscriptions.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+        </svg>
+        <div>
+          <span class="brand-title">NOURISH NEST</span>
+          <span class="brand-sub">BABY & TODDLER MEALS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index2.html">Home 2</a></li>
+        <li><a href="about.html">Our Kitchen</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="allergies.html">Allergies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <!-- Professional Dashboard Grid Shortcut -->
+        <a href="dashboard.html" class="icon-circle-btn" title="Parent Portal Dashboard" aria-label="Parent Portal Dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="13" width="8" height="8" rx="2"/>
+            <rect x="3" y="13" width="8" height="8" rx="2"/>
+          </svg>
+        </a>
+
+        <!-- Theme Sun/Moon Circle Button -->
+        <button class="icon-circle-btn theme-toggle-btn" aria-label="Toggle Theme"></button>
+        
+        <!-- RTL Left-Right Circle Button -->
+        <button class="icon-circle-btn rtl-toggle-btn" aria-label="Toggle Direction"></button>
+        
+        <!-- Primary CTA: Parent Login -->
+        <a href="login.html" class="btn btn-primary">Parent Login →</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index2.html">Home 2</a></li>
+      <li><a href="about.html">Our Kitchen</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="plans.html">Plans</a></li>
+      <li><a href="allergies.html">Allergies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="mobile-controls">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Parent Login →</a>
+      <div style="display: flex; gap: 12px; justify-content: center; margin-top: 12px;">
+        <a href="dashboard.html" class="icon-circle-btn" title="Parent Portal Dashboard" aria-label="Parent Portal Dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="13" width="8" height="8" rx="2"/>
+            <rect x="3" y="13" width="8" height="8" rx="2"/>
+          </svg>
+        </a>
+        <button class="icon-circle-btn theme-toggle-btn" aria-label="Toggle Theme"></button>
+        <button class="icon-circle-btn rtl-toggle-btn" aria-label="Toggle Direction"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOME SECTION 01 — HERO -->
+  <section class="hero">
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <div class="hero-shape shape-1"></div>
+      <div class="hero-shape shape-2"></div>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="section-tag hero-badge">
+          <span class="badge-dot"></span> WHOLESOME NUTRITION
+        </span>
+        <h1 class="hero-title">Little Meals.<br>Big Beginnings.</h1>
+        <p class="hero-desc text-muted" style="font-size: 1.15rem;">
+          Fresh, thoughtfully prepared meals designed around the changing tastes and nutritional needs of growing babies and toddlers.
+        </p>
+        <div class="hero-ctas">
+          <a href="menu.html" class="btn btn-primary">Explore This Week's Menu →</a>
+          <a href="plans.html" class="btn btn-secondary">View Subscription Plans</a>
+        </div>
+        <div class="hero-trust-badges">
+          <span>🌿 Freshly prepared</span>
+          <span>•</span>
+          <span>🥣 Carefully portioned</span>
+          <span>•</span>
+          <span>👶 Parent-friendly</span>
+        </div>
+      </div>
+
+      <div class="hero-image-container">
+        <!-- Ambient Backlight Ring -->
+        <div class="hero-circle-glow"></div>
+
+        <!-- Main Circular Image Frame -->
+        <div class="hero-image-circle">
+          <img src="assets/images/hero-main-feeding.jpg" alt="Parent preparing wholesome baby meal in bright kitchen">
+        </div>
+
+        <!-- Connected Rotating Circular Text Badge -->
+        <div class="hero-rotating-text-badge" title="100% Organic & Freshly Prepared">
+          <svg viewBox="0 0 160 160" class="spin-text-svg">
+            <path id="heroCirclePath" d="M 80, 80 m -58, 0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0" fill="none"/>
+            <text class="spinning-text">
+              <textPath href="#heroCirclePath" startOffset="0%">
+                NOURISH NEST • 100% ORGANIC • FRESH MEALS • 
+              </textPath>
+            </text>
+          </svg>
+          <div class="rotating-badge-center">
+            <span class="center-emoji">👶</span>
+          </div>
+        </div>
+
+        <!-- Connected Floating Badges -->
+        <div class="hero-float-badge float-badge-top">
+          <span class="float-icon">🌱</span>
+          <div class="float-text">
+            <strong>100% Organic</strong>
+            <span>Steamed fresh daily</span>
+          </div>
+        </div>
+
+        <div class="hero-float-badge float-badge-bottom">
+          <span class="float-icon">⭐</span>
+          <div class="float-text">
+            <strong>4.9 Rating</strong>
+            <span>Pediatrician approved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME SECTION 02 — INGREDIENT STORY -->
+  <section class="section section-bg-alt">
+    <div class="container split-grid">
+      <div class="split-image">
+        <img src="assets/images/quality-farm-fresh-produce.jpg" alt="Fresh organic vegetables on kitchen counter">
+      </div>
+      <div>
+        <span class="section-tag">OUR PHILOSOPHY</span>
+        <h2>Simple Ingredients. Thoughtful Preparation.</h2>
+        <p class="text-muted" style="margin-top: 16px;">
+          We focus on clean, nutrient-dense produce cooked in small batches to preserve natural vitamins, colors, and textures for every developmental stage.
+        </p>
+        <div class="journey-timeline">
+          <div class="journey-step">
+            <div class="step-num">01</div>
+            <strong style="font-size: 0.85rem; display: block; margin-top: 4px;">SOURCE</strong>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Fresh Produce</span>
+          </div>
+          <div class="journey-step">
+            <div class="step-num">02</div>
+            <strong style="font-size: 0.85rem; display: block; margin-top: 4px;">PREPARE</strong>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Gentle Steam</span>
+          </div>
+          <div class="journey-step">
+            <div class="step-num">03</div>
+            <strong style="font-size: 0.85rem; display: block; margin-top: 4px;">PORTION</strong>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Age Textures</span>
+          </div>
+          <div class="journey-step">
+            <div class="step-num">04</div>
+            <strong style="font-size: 0.85rem; display: block; margin-top: 4px;">DELIVER</strong>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Chilled Box</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME SECTION 03 — AGE-STAGE MENU -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">DEVELOPMENTAL STAGES</span>
+        <h2>Tailored for Every Growing Milestone</h2>
+        <p class="text-muted">Explore menu items organized by age-appropriate textures and ingredient complexity.</p>
+      </div>
+
+      <div class="age-tabs">
+        <button class="tab-btn active" data-stage="6-8">6–8 Months</button>
+        <button class="tab-btn" data-stage="9-12">9–12 Months</button>
+        <button class="tab-btn" data-stage="12-24">12–24 Months</button>
+        <button class="tab-btn" data-stage="2-4">2–4 Years</button>
+      </div>
+
+      <div class="stage-display-card">
+        <div>
+          <h3 id="stage-title">6–8 Months: Smooth Purees</h3>
+          <p id="stage-desc" class="text-muted" style="margin-top: 12px; margin-bottom: 24px;">
+            Gentle, single-ingredient and simple smooth combinations designed for baby’s very first solid tastes.
+          </p>
+          <a href="menu.html" class="btn btn-primary">View Full Stage Menu →</a>
+        </div>
+        <div id="stage-meals-list" style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="journey-step" style="text-align: left; padding: 16px;">
+            <strong>Organic Sweet Potato Puree</strong>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Sweet Potato, Water</div>
+            <span class="meal-badge" style="margin-top: 8px; display: inline-block;">Smooth Puree</span>
+          </div>
+          <div class="journey-step" style="text-align: left; padding: 16px;">
+            <strong>Pumpkin & Lentil Mash</strong>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Pumpkin, Red Lentil, Olive Oil</div>
+            <span class="meal-badge" style="margin-top: 8px; display: inline-block;">Soft Puree</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME SECTION 04 — WEEKLY MEAL EXPERIENCE -->
+  <section class="section section-bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">WEEKLY CALENDAR</span>
+        <h2>A Week of Meals, Without the Planning Stress</h2>
+        <p class="text-muted">Sample demonstration weekly schedule for busy parents.</p>
+      </div>
+
+      <div class="meal-grid">
+        <div class="meal-card" data-name="Banana Oat Bowl" data-stage="12–24M" data-ingredients="Rolled oats, banana, cinnamon" data-texture="Soft Mash">
+          <div class="meal-card-img"><img src="assets/images/meal-banana-oat-porridge.jpg" alt="Banana Oat Bowl"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">MONDAY</span>
+            <h4>Banana Oat Bowl</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Rolled oats, banana, cinnamon</p>
+          </div>
+        </div>
+        <div class="meal-card" data-name="Soft Vegetable Rice" data-stage="12–24M" data-ingredients="Brown rice, sweet peas, zucchini" data-texture="Textured Rice">
+          <div class="meal-card-img"><img src="assets/images/meal-sweet-potato-rice.jpg" alt="Soft Vegetable Rice"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">TUESDAY</span>
+            <h4>Soft Vegetable Rice</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Brown rice, sweet peas, zucchini</p>
+          </div>
+        </div>
+        <div class="meal-card" data-name="Pumpkin Lentil Mash" data-stage="9–12M" data-ingredients="Pumpkin, red lentils, olive oil" data-texture="Smooth Mash">
+          <div class="meal-card-img"><img src="assets/images/meal-pumpkin-lentil-mash.jpg" alt="Pumpkin Lentil Mash"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">WEDNESDAY</span>
+            <h4>Pumpkin Lentil Mash</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Pumpkin, red lentils, olive oil</p>
+          </div>
+        </div>
+        <div class="meal-card" data-name="Chicken & Sweet Potato" data-stage="12–24M" data-ingredients="Free-range chicken, sweet potato" data-texture="Soft Bites">
+          <div class="meal-card-img"><img src="assets/images/meal-chicken-sweet-potato.jpg" alt="Chicken & Sweet Potato"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">THURSDAY</span>
+            <h4>Chicken & Sweet Potato</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Free-range chicken, sweet potato</p>
+          </div>
+        </div>
+        <div class="meal-card" data-name="Spinach & Apple Risotto" data-stage="12–24M" data-ingredients="Organic spinach, soft apple, arborio rice" data-texture="Creamy Risotto">
+          <div class="meal-card-img"><img src="assets/images/meal-spinach-apple-risotto.jpg" alt="Spinach & Apple Risotto"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">FRIDAY</span>
+            <h4>Spinach & Apple Risotto</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Organic spinach, soft apple, arborio rice</p>
+          </div>
+        </div>
+        <div class="meal-card" data-name="Berry Medley & Quinoa" data-stage="9–12M" data-ingredients="Blueberries, strawberries, gentle quinoa" data-texture="Pureed Fruit Mash">
+          <div class="meal-card-img"><img src="assets/images/meal-wild-berry-quinoa.jpg" alt="Berry Medley & Quinoa"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">SATURDAY</span>
+            <h4>Berry Medley & Quinoa</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Blueberries, strawberries, gentle quinoa</p>
+          </div>
+        </div>
+        <div class="meal-card" data-name="Avocado & Sweet Pea Puree" data-stage="6–8M" data-ingredients="Organic avocado, sweet green peas, mint" data-texture="Smooth Puree">
+          <div class="meal-card-img"><img src="assets/images/meal-avocado-sweet-pea.jpg" alt="Avocado & Sweet Pea Puree"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">SUNDAY</span>
+            <h4>Avocado & Sweet Pea Puree</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Organic avocado, sweet green peas, mint</p>
+          </div>
+        </div>
+        <div class="meal-card" data-name="Organic Chilled Harvest Variety Box" data-stage="12–24M" data-ingredients="Curated seasonal puree, mashes & soft bites" data-texture="Weekly Sampler Box">
+          <div class="meal-card-img"><img src="assets/images/meal-harvest-variety-box.jpg" alt="Organic Chilled Harvest Variety Box"></div>
+          <div class="meal-card-body">
+            <span class="meal-badge">WEEKEND SPECIAL</span>
+            <h4>Chilled Harvest Variety Box</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Curated seasonal purees, mashes & soft bites</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME SECTION 05 — ALLERGY-FIRST EXPERIENCE -->
+  <section class="section">
+    <div class="container split-grid">
+      <div>
+        <span class="section-tag">ALLERGY TRANSPARENCY</span>
+        <h2>Know What's in Every Little Bowl</h2>
+        <p class="text-muted" style="margin-top: 16px;">
+          Clear ingredient visibility and parent-controlled allergy preference filters ensure complete peace of mind at every mealtime.
+        </p>
+        <div style="margin-top: 24px; padding: 20px; background: var(--bg-alt); border-radius: 12px; font-size: 0.9rem;">
+          <strong>Important Safety Note:</strong> Parents and caregivers should review ingredient information and consult appropriate healthcare professionals regarding allergies and dietary needs.
+        </div>
+        <div style="margin-top: 24px;">
+          <a href="allergies.html" class="btn btn-primary">Explore Allergy Information →</a>
+        </div>
+      </div>
+      <div class="split-image">
+        <img src="assets/images/quality-allergy-testing.jpg" alt="Allergen safety labeling and ingredients">
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME SECTION 06 — PARENT TESTIMONIALS & TRUST (UNIQUE ANIMATED CAROUSEL) -->
+  <section class="section section-bg-alt testimonials-section" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag hero-badge">
+          <span class="badge-dot"></span> PARENT REVIEWS
+        </span>
+        <h2>Loved by Little Ones.<br>Trusted by Parents.</h2>
+        <p class="text-muted">Real stories from families who replaced meal prep stress with organic, wholesome joy.</p>
+      </div>
+
+      <!-- Trust Metrics Bar -->
+      <div class="testimonial-metrics">
+        <div class="metric-card">
+          <div class="metric-number">4.9 ★</div>
+          <div class="metric-label">Average Parent Rating</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">10,000+</div>
+          <div class="metric-label">Fresh Organic Jars Served</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">100%</div>
+          <div class="metric-label">Chef & Pediatrician Approved</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">98.5%</div>
+          <div class="metric-label">On-Time Chilled Box Delivery</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infinite Animated Marquee Track (Single Clean Row) -->
+    <div class="testimonial-marquee-wrapper" style="margin-top: 40px;">
+      <div class="testimonial-marquee-track track-left">
+        <!-- Testimonial Card 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "Nourish Nest completely transformed our evenings! Ava started on the 6–8M purees and now loves the textured mashes. The sweet potato puree is her absolute favorite!"
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-sarah-m.jpg" alt="Sarah Morgan" class="author-avatar">
+            <div>
+              <strong>Sarah Morgan</strong>
+              <div class="author-sub">Mom of Ava (9–12M) • <span>Fav: Sweet Potato</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "Knowing every jar is organic with zero preservatives gives me total peace of mind. The weekly subscription delivery is always perfectly chilled and fresh."
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-david-c.jpg" alt="David Chen" class="author-avatar">
+            <div>
+              <strong>David Chen</strong>
+              <div class="author-sub">Dad of Leo (12–24M) • <span>Fav: Veggie Rice</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "As a pediatrician and mom, I’m extremely picky about baby food. Nourish Nest nails the nutrient density and developmental textures for every stage!"
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-emily-r.jpg" alt="Dr. Emily Roberts" class="author-avatar">
+            <div>
+              <strong>Dr. Emily Roberts</strong>
+              <div class="author-sub">Pediatrician & Mom of Maya • <span>Fav: Pumpkin Mash</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "The allergy labeling and customization features allowed us to tailor meals safely for my son's dairy sensitivity. Exceptional quality!"
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-jessica-t.jpg" alt="Jessica Taylor" class="author-avatar">
+            <div>
+              <strong>Jessica Taylor</strong>
+              <div class="author-sub">Mom of Noah (2–4Y) • <span>Fav: Chicken Potato</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "My picky eater toddler devoured the Spinach & Apple Risotto! Finally a healthy meal delivery service that actually tastes delicious."
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-marcus-v.jpg" alt="Marcus Vance" class="author-avatar">
+            <div>
+              <strong>Marcus Vance</strong>
+              <div class="author-sub">Dad of Chloe (12–24M) • <span>Fav: Spinach Risotto</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 6 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "Worth every single penny. I save 5+ hours of steaming and blending every week, and my baby gets clean, high quality organic meals."
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-rachel-g.jpg" alt="Rachel Green" class="author-avatar">
+            <div>
+              <strong>Rachel Green</strong>
+              <div class="author-sub">Mom of Oliver (6–8M) • <span>Fav: Berry Quinoa</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Duplicated Set for Seamless Infinite Loop -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "Nourish Nest completely transformed our evenings! Ava started on the 6–8M purees and now loves the textured mashes. The sweet potato puree is her absolute favorite!"
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-priya-s.jpg" alt="Priya Sharma" class="author-avatar">
+            <div>
+              <strong>Priya Sharma</strong>
+              <div class="author-sub">Mom of Aarav (8M) • <span>Fav: Mango Chia</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "Knowing every jar is organic with zero preservatives gives me total peace of mind. The weekly subscription delivery is always perfectly chilled and fresh."
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-alex-k.jpg" alt="Alex Kumar" class="author-avatar">
+            <div>
+              <strong>Alex Kumar</strong>
+              <div class="author-sub">Dad of Liam (14M) • <span>Fav: Turkey Bites</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "As a nutritionist, I love how clean the ingredients are. No hidden sugars, no synthetic fillers—just real whole organic food."
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-elena-r.jpg" alt="Elena Rodriguez" class="author-avatar">
+            <div>
+              <strong>Elena Rodriguez</strong>
+              <div class="author-sub">Mom of Mateo (10M) • <span>Fav: Avocado Pea</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "The allergy customization feature is a lifesaver. Being able to filter dairy and nuts gave us absolute peace of mind."
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-james-w.jpg" alt="James Wilson" class="author-avatar">
+            <div>
+              <strong>James Wilson</strong>
+              <div class="author-sub">Dad of Maya (2Y) • <span>Fav: Toddler Ravioli</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "Super fresh, beautiful packaging, and my baby eats every single bite. We couldn't be happier with Nourish Nest!"
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-sophia-l.jpg" alt="Sophia Lee" class="author-avatar">
+            <div>
+              <strong>Sophia Lee</strong>
+              <div class="author-sub">Mom of Kai (7M) • <span>Fav: Peach Custard</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Parent</span>
+          </div>
+          <p class="testimonial-quote">
+            "Subscribing to Nourish Nest saved our busy weeknight routines. Highly recommended to all new parents!"
+          </p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-parent-michael-b.jpg" alt="Michael Brown" class="author-avatar">
+            <div>
+              <strong>Michael Brown</strong>
+              <div class="author-sub">Dad of Ben (18M) • <span>Fav: Broccoli Tots</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pre-Footer Action Banner (Matching About Page Structure) -->
+  <section class="section section-bg-alt" style="padding: 64px 0;">
+    <div class="container">
+      <div class="cta-floating-banner">
+        <div>
+          <span class="section-tag" style="margin-bottom: 6px;">JOIN 10,000+ HAPPY FAMILIES</span>
+          <h3 style="font-size: 1.35rem; margin-bottom: 6px;">More Time at the Table. Less Time Planning It.</h3>
+          <p class="text-muted" style="font-size: 0.92rem;">Give your child clean, organic nutrition prepared fresh for every developmental stage.</p>
+        </div>
+        <a href="plans.html" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.05rem;">Choose Your Subscription Plan →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Public Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand-logo">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
+            <div>
+              <span class="brand-title" style="color: #FFFFFF;">NOURISH NEST</span>
+              <span class="brand-sub" style="color: var(--color-primary);">BABY & TODDLER MEALS</span>
+            </div>
+          </a>
+          <p style="color: #D1C5B4; font-size: 0.9rem; line-height: 1.6;">
+            Specialty Baby Food & Toddler Meal Delivery thoughtfully prepared for growing little ones. Made with organic ingredients and delivered fresh to your door every week.
+          </p>
+
+          <!-- Social Icons Bar -->
+          <div class="footer-social-bar">
+            <a href="#" class="footer-social-icon" aria-label="Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Twitter / X" title="Twitter / X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>EXPLORE</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Our Kitchen</a></li>
+            <li><a href="menu.html">Weekly Menu</a></li>
+            <li><a href="plans.html">Subscription Plans</a></li>
+            <li><a href="allergies.html">Allergy Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>PARENT PORTAL</h5>
+          <ul>
+            <li><a href="login.html">Parent Login</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html">Account Help</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>CONTACT</h5>
+          <ul>
+            <li><span style="color: #D1C5B4;">+1 (800) 555-NEST</span></li>
+            <li><span style="color: #D1C5B4;">hello@nourishnest.com</span></li>
+            <li><span style="color: #D1C5B4;">Mon – Fri: 8am – 5pm</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Nourish Nest. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Allergy Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Public Reusable Modal -->
+  <div class="modal-overlay" id="public-modal">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close Modal">×</button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

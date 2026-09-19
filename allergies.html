@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allergy Information | Nourish Nest Specialty Baby Food</title>
+  <meta name="description" content="Detailed allergen breakdown and transparency guidelines for Nourish Nest baby and toddler meals. Parent-controlled allergen filtering.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+        </svg>
+        <div>
+          <span class="brand-title">NOURISH NEST</span>
+          <span class="brand-sub">BABY & TODDLER MEALS</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index2.html">Home 2</a></li>
+        <li><a href="about.html">Our Kitchen</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="allergies.html" class="active">Allergies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="dashboard.html" class="icon-circle-btn" title="Parent Portal Dashboard" aria-label="Parent Portal Dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="13" width="8" height="8" rx="2"/>
+            <rect x="3" y="13" width="8" height="8" rx="2"/>
+          </svg>
+        </a>
+        <button class="icon-circle-btn theme-toggle-btn" aria-label="Toggle Theme"></button>
+        <button class="icon-circle-btn rtl-toggle-btn" aria-label="Toggle Direction"></button>
+        <a href="login.html" class="btn btn-primary">Parent Login →</a>
+      </div>
+
+      <button class="hamburger" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index2.html">Home 2</a></li>
+      <li><a href="about.html">Our Kitchen</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="plans.html">Plans</a></li>
+      <li><a href="allergies.html" class="active">Allergies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-controls">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Parent Login →</a>
+      <div style="display: flex; gap: 12px; justify-content: center; margin-top: 12px;">
+        <a href="dashboard.html" class="icon-circle-btn" title="Parent Portal Dashboard" aria-label="Parent Portal Dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="3" width="8" height="8" rx="2"/>
+            <rect x="13" y="13" width="8" height="8" rx="2"/>
+            <rect x="3" y="13" width="8" height="8" rx="2"/>
+          </svg>
+        </a>
+        <button class="icon-circle-btn theme-toggle-btn" aria-label="Toggle Theme"></button>
+        <button class="icon-circle-btn rtl-toggle-btn" aria-label="Toggle Direction"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALLERGY SECTION 01 — HERO -->
+  <section class="hero text-center">
+    <div class="container" style="max-width: 900px;">
+      <span class="section-tag">SAFETY & TRANSPARENCY</span>
+      <h1>Know Every Ingredient Before Mealtime.</h1>
+      <p class="text-muted" style="margin-top: 16px; margin-bottom: 28px;">
+        Clear ingredient information and parent-controlled preference settings help families make informed meal choices.
+      </p>
+      <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); max-height: 400px;">
+        <img src="assets/images/hero-allergy-safe-kitchen.jpg" alt="100% Nut-Free & Dairy-Free Lab Certified Kitchen Ingredients" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ALLERGY SECTION 02 — ALLERGEN GUIDE GRID -->
+  <section class="section section-bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">8 MAJOR ALLERGENS</span>
+        <h2>Transparent Labeling & Filtering</h2>
+        <p class="text-muted">Click any allergen category to review how we manage ingredients.</p>
+      </div>
+
+      <div class="meal-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+        
+        <div class="meal-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 2.5rem;">🥛</span>
+          <h4 style="margin-top: 12px;">Milk / Dairy</h4>
+          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Found in select toddler ravioli and creamy risottos. Clearly tagged.</p>
+        </div>
+
+        <div class="meal-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 2.5rem;">🥚</span>
+          <h4 style="margin-top: 12px;">Egg</h4>
+          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Used in specialized pasta textures. Excluded from purees.</p>
+        </div>
+
+        <div class="meal-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 2.5rem;">🌾</span>
+          <h4 style="margin-top: 12px;">Wheat / Gluten</h4>
+          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Present in select oat bowls and toddler pasta recipes.</p>
+        </div>
+
+        <div class="meal-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 2.5rem;">🫘</span>
+          <h4 style="margin-top: 12px;">Soy</h4>
+          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Excluded from all Stage 1 purees. Filterable in portal.</p>
+        </div>
+
+        <div class="meal-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 2.5rem;">🥜</span>
+          <h4 style="margin-top: 12px;">Peanuts</h4>
+          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Completely peanut-free kitchen environment.</p>
+        </div>
+
+        <div class="meal-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 2.5rem;">🌰</span>
+          <h4 style="margin-top: 12px;">Tree Nuts</h4>
+          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Tree nut-free standard kitchen facility.</p>
+        </div>
+
+        <div class="meal-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 2.5rem;">🐟</span>
+          <h4 style="margin-top: 12px;">Fish</h4>
+          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Selected toddler dinners contain wild salmon. Tagged.</p>
+        </div>
+
+        <div class="meal-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 2.5rem;">🌱</span>
+          <h4 style="margin-top: 12px;">Sesame</h4>
+          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Optional tahini glazes in Stage 4. Filterable in settings.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ALLERGY SECTION 03 — PREFERENCE SYSTEM SHOWCASE -->
+  <section class="section">
+    <div class="container split-grid">
+      <div>
+        <span class="section-tag">PARENT PORTAL SYSTEM</span>
+        <h2>Customizable Allergy & Taste Filters</h2>
+        <p class="text-muted" style="margin-top: 16px;">
+          Inside your Parent Portal, toggling an allergen automatically excludes any recipes containing that item from your weekly suggestions.
+        </p>
+        <div style="margin-top: 24px;">
+          <a href="dashboard.html" class="btn btn-primary">Manage Preferences in Parent Portal →</a>
+        </div>
+      </div>
+      <div class="split-image">
+        <img src="assets/images/quality-allergy-testing.jpg" alt="Parent portal allergy toggle demonstration">
+      </div>
+    </div>
+  </section>
+
+  <!-- ALLERGY SECTION 04 — UNIQUE INTERACTIVE EARLY ALLERGEN PROTOCOL & SAFETY MATRIX -->
+  <section class="section allergen-protocol-section">
+    <div class="container text-center">
+      <span class="section-tag">PEDIATRIC SCIENCE & PROTOCOLS</span>
+      <h2>Early Allergen Introduction & Isolation Safety Matrix</h2>
+      <p class="text-muted" style="max-width: 680px; margin: 16px auto 0;">
+        Explore our clinical guidance framework for early allergen exposure alongside our certified zero cross-contamination kitchen protocols.
+      </p>
+
+      <div class="allergen-protocol-grid">
+        
+        <!-- Left Column: Protocol Stage Selectors -->
+        <div class="protocol-selector-list">
+          
+          <div class="protocol-stage-card active" data-protocol="1" role="button" aria-selected="true" tabindex="0">
+            <div class="protocol-icon-badge">🥜</div>
+            <div class="protocol-stage-info">
+              <h4>Stage A: Micro-Dose Intro</h4>
+              <span>6–7 Months • Single-Protein Exposure</span>
+            </div>
+          </div>
+
+          <div class="protocol-stage-card" data-protocol="2" role="button" aria-selected="false" tabindex="0">
+            <div class="protocol-icon-badge">🐟</div>
+            <div class="protocol-stage-info">
+              <h4>Stage B: Rotational Tolerance</h4>
+              <span>8–10 Months • Weekly Alternating Group</span>
+            </div>
+          </div>
+
+          <div class="protocol-stage-card" data-protocol="3" role="button" aria-selected="false" tabindex="0">
+            <div class="protocol-icon-badge">🍝</div>
+            <div class="protocol-stage-info">
+              <h4>Stage C: Maintenance Routine</h4>
+              <span>11+ Months • Toddler Portion Integration</span>
+            </div>
+          </div>
+
+          <div class="protocol-stage-card" data-protocol="4" role="button" aria-selected="false" tabindex="0">
+            <div class="protocol-icon-badge">🛡️</div>
+            <div class="protocol-stage-info">
+              <h4>Stage D: 100% Elimination Shield</h4>
+              <span>0 Risk • Diagnosed Allergy Exclusion</span>
+            </div>
+          </div>
+
+          <!-- Pediatric Clinical Safety & Lab Guarantee Card (Fills desktop left column space) -->
+          <div class="protocol-safety-feature-card">
+            <div class="protocol-feature-img-wrap">
+              <img src="assets/images/quality-allergy-testing.jpg" alt="Certified Organic Ingredient Lab Testing" class="protocol-feature-img">
+              <span class="protocol-feature-badge">🛡️ Certified 0 Cross-Contamination</span>
+            </div>
+            <div class="protocol-feature-body">
+              <h4>Pediatrician Lab Tested & Certified</h4>
+              <p>Every batch undergoes independent 3rd-party lab screening for 8 major allergens, heavy metals, and pesticides before packing.</p>
+              <div class="protocol-feature-stats">
+                <div class="stat-pill">
+                  <strong>100%</strong>
+                  <span>Organic Sourced</span>
+                </div>
+                <div class="stat-pill">
+                  <strong>0.00%</strong>
+                  <span>Lab Risk</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Protocol Display Panel -->
+        <div class="protocol-display-panel" id="protocolDisplayPanel">
+          <span class="protocol-header-badge" id="protocolBadge">STAGE A (6–7M): MICRO-DOSE INTRO</span>
+          <h3 id="protocolTitle" class="protocol-title">Pediatric Micro-Dose Exposure Protocol</h3>
+          <p class="text-muted" id="protocolDesc" style="font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px;">
+            Controlled single-protein micro-exposures designed under pediatric allergy guidelines to safely introduce common allergenic proteins during the optimal infant immune window.
+          </p>
+
+          <!-- Dynamic Meters -->
+          <div class="safety-meter-box">
+            <div class="safety-meter-row">
+              <div class="safety-meter-header">
+                <span class="safety-meter-name">Kitchen Batch Isolation</span>
+                <span class="safety-meter-val" id="isoVal">100% Isolated Batch Prep</span>
+              </div>
+              <div class="safety-progress-bar">
+                <div class="safety-progress-fill" id="isoBar" style="width: 100%;"></div>
+              </div>
+            </div>
+
+            <div class="safety-meter-row">
+              <div class="safety-meter-header">
+                <span class="safety-meter-name">Micro-Dose Dosing Accuracy</span>
+                <span class="safety-meter-val" id="purVal">99.9% Micro-Dose Precision</span>
+              </div>
+              <div class="safety-progress-bar">
+                <div class="safety-progress-fill" id="purBar" style="width: 99%;"></div>
+              </div>
+            </div>
+
+            <div class="safety-meter-row">
+              <div class="safety-meter-header">
+                <span class="safety-meter-name">Airborne Cross-Contamination Risk</span>
+                <span class="safety-meter-val" id="airVal">Zero Cross-Contamination Risk</span>
+              </div>
+              <div class="safety-progress-bar">
+                <div class="safety-progress-fill" id="airBar" style="width: 5%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample Ingredients Cloud -->
+          <div style="margin-bottom: 24px;">
+            <span class="protocol-ingredient-heading">Sample Protocol Recipes & Proteins:</span>
+            <div id="protocolIngredientList" class="protocol-ingredient-stack">
+              <div class="protocol-ingredient-item">
+                <strong class="ingredient-title">🥜 Peanut Flour Purée Swirl</strong>
+                <span class="ingredient-note">0.2g organic peanut protein micro-dose blend</span>
+              </div>
+              <div class="protocol-ingredient-item">
+                <strong class="ingredient-title">🥚 Steamed Egg Yolk Reduction</strong>
+                <span class="ingredient-note">Low-allergenic yolk protein smooth puree</span>
+              </div>
+              <div class="protocol-ingredient-item">
+                <strong class="ingredient-title">🌾 Hydrolyzed Oat Flakes</strong>
+                <span class="ingredient-note">Hypoallergenic grain carrying base</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="generateAllergyReportBtn" style="width: 100%;">Download Pediatric Protocol Summary →</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ALLERGY SECTION 05 — PEDIATRIC MEDICAL ADVISORY & SAFETY GUIDELINES -->
+  <section class="section section-bg-alt">
+    <div class="container text-center">
+      <span class="section-tag">MEDICAL TRANSPARENCY & GUIDELINES</span>
+      <h2>Pediatric Medical Safety & Clinical Allergy Guidelines</h2>
+      <p class="text-muted" style="max-width: 720px; margin: 16px auto 0;">
+        We partner with pediatricians and board-certified pediatric allergists to ensure every recipe introduction is transparent, evidence-based, and medically sound.
+      </p>
+
+      <div class="allergy-advisory-grid">
+        
+        <div class="advisory-card">
+          <div class="advisory-icon">🩺</div>
+          <h4 style="margin-bottom: 4px;">Physician-Guided Intro</h4>
+          <p class="text-muted" style="font-size: 0.88rem; line-height: 1.6;">
+            Before introducing high-risk allergenic proteins (like peanuts, tree nuts, or eggs), consult your pediatrician to confirm your baby's individual readiness.
+          </p>
+        </div>
+
+        <div class="advisory-card">
+          <div class="advisory-icon">🧪</div>
+          <h4 style="margin-bottom: 4px;">Triple ELISA Lab Assays</h4>
+          <p class="text-muted" style="font-size: 0.88rem; line-height: 1.6;">
+            All equipment undergoes certified protein ELISA swab validation between production runs to guarantee zero cross-contact trace residual.
+          </p>
+        </div>
+
+        <div class="advisory-card">
+          <div class="advisory-icon">📋</div>
+          <h4 style="margin-bottom: 4px;">Allergy Action Protocol</h4>
+          <p class="text-muted" style="font-size: 0.88rem; line-height: 1.6;">
+            We recommend parents maintain a written Emergency Anaphylaxis Action Plan at home when offering solid food introductions for the first time.
+          </p>
+        </div>
+
+        <div class="advisory-card">
+          <div class="advisory-icon">💬</div>
+          <h4 style="margin-bottom: 4px;">Dietitian Consultation</h4>
+          <p class="text-muted" style="font-size: 0.88rem; line-height: 1.6;">
+            Our in-house pediatric nutritionists are available to review complex ingredient profiles and answer parent safety questions 5 days a week.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ALLERGY SECTION 06 — NEW INFANT ALLERGY ASSURANCE & PROFILE BUILDER HUB -->
+  <section class="section allergy-assurance-section text-center">
+    <div class="container">
+      <span class="section-tag">PARENT CONTROL & SAFETY HUB</span>
+      <h2>Personalized Infant Allergy Profile & Assurance Hub</h2>
+      <p class="text-muted" style="max-width: 680px; margin: 16px auto 0;">
+        Take total control of your baby's weekly menu with live allergen exclusion filters, downloadable lab verification certificates, and multi-child profile management.
+      </p>
+
+      <div class="assurance-grid">
+        
+        <div class="assurance-card">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">🛡️</div>
+            <h3 style="margin-bottom: 10px; font-size: 1.25rem;">Automated Recipe Excluder</h3>
+            <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+              Select any of 14 major allergens or custom ingredients. Our smart system automatically scrubs matching recipes from your suggested weekly deliveries.
+            </p>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="dashboard.html" class="btn btn-outline" style="width: 100%;">Set Exclusion Rules →</a>
+          </div>
+        </div>
+
+        <div class="assurance-card">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">📑</div>
+            <h3 style="margin-bottom: 10px; font-size: 1.25rem;">Certified Batch Lab Reports</h3>
+            <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+              Review farm-to-jar traceability, heavy metal lab screens, and equipment swab certificates directly inside your Parent Dashboard.
+            </p>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="dashboard.html" class="btn btn-outline" style="width: 100%;">View Lab Certificates →</a>
+          </div>
+        </div>
+
+        <div class="assurance-card">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">👶</div>
+            <h3 style="margin-bottom: 10px; font-size: 1.25rem;">Multi-Child Profiles</h3>
+            <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+              Manage individual dietary preferences per child. Keep infant purees 100% dairy-free while serving toddler pasta for older siblings under one account.
+            </p>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="dashboard.html" class="btn btn-outline" style="width: 100%;">Manage Child Profiles →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="background: var(--bg-alt); padding: 32px; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; text-align: left;">
+        <div>
+          <h4 style="margin-bottom: 6px;">Ready to Build Your Child's Custom Allergy Profile?</h4>
+          <p class="text-muted" style="font-size: 0.92rem;">Access your Parent Portal dashboard to configure dietary rules in under 2 minutes.</p>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="dashboard.html" class="btn btn-primary">Build Allergy Profile in Parent Portal →</a>
+          <button class="btn btn-secondary" onclick="showToast('Opening Pediatric Nutrition Hotline...')">Consult Nutrition Team</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand-logo">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
+            <div>
+              <span class="brand-title" style="color: #FFFFFF;">NOURISH NEST</span>
+              <span class="brand-sub" style="color: var(--color-primary);">BABY & TODDLER MEALS</span>
+            </div>
+          </a>
+          <p style="color: #D1C5B4; font-size: 0.9rem; line-height: 1.6;">
+            Specialty Baby Food & Toddler Meal Delivery thoughtfully prepared for growing little ones. Made with organic ingredients and delivered fresh to your door every week.
+          </p>
+
+          <!-- Social Icons Bar -->
+          <div class="footer-social-bar">
+            <a href="#" class="footer-social-icon" aria-label="Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="Twitter / X" title="Twitter / X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+            <a href="#" class="footer-social-icon" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>EXPLORE</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Our Kitchen</a></li>
+            <li><a href="menu.html">Weekly Menu</a></li>
+            <li><a href="plans.html">Subscription Plans</a></li>
+            <li><a href="allergies.html">Allergy Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>PARENT PORTAL</h5>
+          <ul>
+            <li><a href="login.html">Parent Login</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html">Account Help</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>CONTACT</h5>
+          <ul>
+            <li><span style="color: #D1C5B4;">+1 (800) 555-NEST</span></li>
+            <li><span style="color: #D1C5B4;">hello@nourishnest.com</span></li>
+            <li><span style="color: #D1C5B4;">Mon – Fri: 8am – 5pm</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Nourish Nest. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Allergy Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
