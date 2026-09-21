@@ -201,11 +201,11 @@ function renderOverview(c) {
     </div>
 
     <!-- Alert Banner -->
-    <div class="dash-card" style="background: var(--dash-secondary); border-color: #E2D4BF; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+    <div class="dash-card" style="background: var(--dash-secondary); border-color: var(--dash-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
       <div style="display: flex; align-items: center; gap: 16px;">
         <span style="font-size: 1.5rem;">🔔</span>
         <div>
-          <strong style="color: var(--dash-dark);">Preference Review Notice</strong>
+          <strong style="color: var(--dash-text);">Preference Review Notice</strong>
           <div style="font-size: 0.9rem; color: var(--dash-muted);">Ava's meal preferences were last reviewed 18 days ago. Ensure textures align with her growth!</div>
         </div>
       </div>

@@ -38,6 +38,8 @@
   --dash-text: #F4EBDD;
   --dash-muted: #A39686;
   --dash-border: #3D332A;
+  /* Notification unread card — override light secondary for dark mode */
+  --dash-secondary: #2E2520;
 }
 
 *, *::before, *::after {
@@ -116,7 +118,7 @@ body.dash-body {
 .btn-outline:hover {
   background-color: var(--dash-secondary);
   border-color: var(--dash-primary);
-  color: var(--dash-dark);
+  color: var(--dash-text);
 }
 
 .btn-sm {
