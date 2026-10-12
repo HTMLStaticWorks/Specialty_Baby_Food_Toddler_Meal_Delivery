@@ -176,6 +176,33 @@ function renderCurrentView() {
    -------------------------------------------------------------------------- */
 function renderOverview(c) {
   c.innerHTML = `
+    <!-- Welcome Header Banner -->
+    <div class="dash-welcome-banner">
+      <div class="welcome-banner-left">
+        <div class="welcome-avatar-wrap">
+          <img src="assets/images/avatar-parent-sarah-m.jpg" alt="Sarah Morgan" class="welcome-avatar-img">
+          <span class="welcome-wave-badge">👋</span>
+        </div>
+        <div>
+          <div class="welcome-greeting-row">
+            <h2 class="welcome-title">Welcome back, Sarah!</h2>
+            <span class="welcome-status-pill">● Active Plan</span>
+          </div>
+          <p class="welcome-subtitle">
+            Here's ${dashState.childName}'s weekly nutrition plan and delivery schedule for <strong>${dashState.activeWeek}</strong>. Everything is prepared 100% allergen-safe according to your profile.
+          </p>
+        </div>
+      </div>
+      <div class="welcome-banner-right">
+        <button class="btn btn-outline" onclick="switchView('meals')">
+          <span>🥣</span> Customize Meals
+        </button>
+        <button class="btn btn-primary" onclick="switchView('schedule')">
+          <span>🚚</span> Track Next Box
+        </button>
+      </div>
+    </div>
+
     <!-- KPI Cards -->
     <div class="kpi-grid">
       <div class="kpi-card">
@@ -201,12 +228,12 @@ function renderOverview(c) {
     </div>
 
     <!-- Alert Banner -->
-    <div class="dash-card" style="background: var(--dash-secondary); border-color: var(--dash-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-      <div style="display: flex; align-items: center; gap: 16px;">
-        <span style="font-size: 1.5rem;">🔔</span>
-        <div>
-          <strong style="color: var(--dash-text);">Preference Review Notice</strong>
-          <div style="font-size: 0.9rem; color: var(--dash-muted);">Ava's meal preferences were last reviewed 18 days ago. Ensure textures align with her growth!</div>
+    <div class="dash-card" style="background: var(--dash-secondary); border-color: var(--dash-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 14px; min-width: 0; flex: 1;">
+        <span style="font-size: 1.5rem; flex-shrink: 0;">🔔</span>
+        <div style="min-width: 0;">
+          <strong style="color: var(--dash-text); display: block; word-break: break-word;">Preference Review Notice</strong>
+          <div style="font-size: 0.88rem; color: var(--dash-muted); word-break: break-word; line-height: 1.4;">Ava's meal preferences were last reviewed 18 days ago. Ensure textures align with her growth!</div>
         </div>
       </div>
       <button class="btn btn-primary" onclick="switchView('allergies')">Review Preferences →</button>
@@ -245,18 +272,48 @@ function renderOverview(c) {
           <span>This Week's Meal Plan Preview</span>
           <button class="btn btn-outline" style="padding: 6px 16px; font-size: 0.85rem;" onclick="switchView('meals')">View Full Week →</button>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div style="display: flex; justify-content: space-between; padding: 12px; background: var(--dash-bg); border-radius: 8px;">
-            <strong>Monday</strong>
-            <span>Breakfast: ${dashState.weeklyMeals.Mon.breakfast} | Lunch: ${dashState.weeklyMeals.Mon.lunch}</span>
+        <div class="meal-preview-list">
+          <div class="meal-preview-row">
+            <span class="meal-preview-day">📅 Monday</span>
+            <div class="meal-preview-content">
+              <span class="meal-preview-tag">
+                <span class="meal-label-badge">Breakfast</span>
+                <span class="meal-name-text">${dashState.weeklyMeals.Mon.breakfast}</span>
+              </span>
+              <span class="meal-divider-dot">•</span>
+              <span class="meal-preview-tag">
+                <span class="meal-label-badge">Lunch</span>
+                <span class="meal-name-text">${dashState.weeklyMeals.Mon.lunch}</span>
+              </span>
+            </div>
           </div>
-          <div style="display: flex; justify-content: space-between; padding: 12px; background: var(--dash-bg); border-radius: 8px;">
-            <strong>Tuesday</strong>
-            <span>Breakfast: ${dashState.weeklyMeals.Tue.breakfast} | Lunch: ${dashState.weeklyMeals.Tue.lunch}</span>
+          <div class="meal-preview-row">
+            <span class="meal-preview-day">📅 Tuesday</span>
+            <div class="meal-preview-content">
+              <span class="meal-preview-tag">
+                <span class="meal-label-badge">Breakfast</span>
+                <span class="meal-name-text">${dashState.weeklyMeals.Tue.breakfast}</span>
+              </span>
+              <span class="meal-divider-dot">•</span>
+              <span class="meal-preview-tag">
+                <span class="meal-label-badge">Lunch</span>
+                <span class="meal-name-text">${dashState.weeklyMeals.Tue.lunch}</span>
+              </span>
+            </div>
           </div>
-          <div style="display: flex; justify-content: space-between; padding: 12px; background: var(--dash-bg); border-radius: 8px;">
-            <strong>Wednesday</strong>
-            <span>Breakfast: ${dashState.weeklyMeals.Wed.breakfast} | Lunch: ${dashState.weeklyMeals.Wed.lunch}</span>
+          <div class="meal-preview-row">
+            <span class="meal-preview-day">📅 Wednesday</span>
+            <div class="meal-preview-content">
+              <span class="meal-preview-tag">
+                <span class="meal-label-badge">Breakfast</span>
+                <span class="meal-name-text">${dashState.weeklyMeals.Wed.breakfast}</span>
+              </span>
+              <span class="meal-divider-dot">•</span>
+              <span class="meal-preview-tag">
+                <span class="meal-label-badge">Lunch</span>
+                <span class="meal-name-text">${dashState.weeklyMeals.Wed.lunch}</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -682,7 +739,7 @@ function renderProfile(c) {
         <button class="btn btn-primary" onclick="showDashToast('Profile changes saved!')">Save Profile</button>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+      <div class="profile-info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
         <div>
           <h4>Parent Information</h4>
           <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 12px;">

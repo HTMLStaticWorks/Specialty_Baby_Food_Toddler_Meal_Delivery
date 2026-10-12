@@ -108,54 +108,158 @@
         <p class="text-muted">Click any allergen category to review how we manage ingredients.</p>
       </div>
 
-      <div class="meal-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+      <div class="allergen-catalog-grid">
         
-        <div class="meal-card" style="padding: 24px; text-align: center;">
-          <span style="font-size: 2.5rem;">🥛</span>
-          <h4 style="margin-top: 12px;">Milk / Dairy</h4>
-          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Found in select toddler ravioli and creamy risottos. Clearly tagged.</p>
+        <!-- Allergen 1: Milk / Dairy (1.jpg) -->
+        <div class="allergen-card" onclick="openAllergenDetailModal('milk')" role="button" tabindex="0" aria-label="Review Milk & Dairy allergy policy">
+          <div class="allergen-card-media">
+            <img src="assets/images/1.jpg" alt="Organic dairy, milk and cheese ingredients" class="allergen-card-img" loading="lazy">
+            <span class="allergen-badge-overlay">Stage 3+ Only</span>
+          </div>
+          <div class="allergen-card-body">
+            <div class="allergen-card-header">
+              <h4 class="allergen-card-title">Milk &amp; Dairy</h4>
+              <span class="allergen-pill-status">Clearly Tagged</span>
+            </div>
+            <p class="allergen-card-desc">Found only in select toddler ravioli &amp; risottos. 100% absent in all early infant purées.</p>
+            <div class="allergen-card-footer">
+              <span>🛡️ Triple-Rinse Line</span>
+              <span class="allergen-action-link">View Protocol →</span>
+            </div>
+          </div>
         </div>
 
-        <div class="meal-card" style="padding: 24px; text-align: center;">
-          <span style="font-size: 2.5rem;">🥚</span>
-          <h4 style="margin-top: 12px;">Egg</h4>
-          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Used in specialized pasta textures. Excluded from purees.</p>
+        <!-- Allergen 2: Egg (2.jpg) -->
+        <div class="allergen-card" onclick="openAllergenDetailModal('egg')" role="button" tabindex="0" aria-label="Review Egg allergy policy">
+          <div class="allergen-card-media">
+            <img src="assets/images/2.jpg" alt="Farm fresh pasture raised eggs" class="allergen-card-img" loading="lazy">
+            <span class="allergen-badge-overlay">Toddler Bakes</span>
+          </div>
+          <div class="allergen-card-body">
+            <div class="allergen-card-header">
+              <h4 class="allergen-card-title">Eggs</h4>
+              <span class="allergen-pill-status">Pasta Textures</span>
+            </div>
+            <p class="allergen-card-desc">Used strictly in specialized toddler pasta textures. Excluded from infant meal purées.</p>
+            <div class="allergen-card-footer">
+              <span>🛡️ Swab Verified</span>
+              <span class="allergen-action-link">View Protocol →</span>
+            </div>
+          </div>
         </div>
 
-        <div class="meal-card" style="padding: 24px; text-align: center;">
-          <span style="font-size: 2.5rem;">🌾</span>
-          <h4 style="margin-top: 12px;">Wheat / Gluten</h4>
-          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Present in select oat bowls and toddler pasta recipes.</p>
+        <!-- Allergen 3: Wheat / Gluten (3.jpg) -->
+        <div class="allergen-card" onclick="openAllergenDetailModal('wheat')" role="button" tabindex="0" aria-label="Review Wheat & Gluten allergy policy">
+          <div class="allergen-card-media">
+            <img src="assets/images/3.jpg" alt="Whole grain wheat and gluten grains" class="allergen-card-img" loading="lazy">
+            <span class="allergen-badge-overlay">GF Available</span>
+          </div>
+          <div class="allergen-card-body">
+            <div class="allergen-card-header">
+              <h4 class="allergen-card-title">Wheat &amp; Gluten</h4>
+              <span class="allergen-pill-status">100% GF Swaps</span>
+            </div>
+            <p class="allergen-card-desc">Present in select oat bowls and toddler pasta. Certified gluten-free grain alternatives always available.</p>
+            <div class="allergen-card-footer">
+              <span>🌾 Dedicated GF Days</span>
+              <span class="allergen-action-link">View Protocol →</span>
+            </div>
+          </div>
         </div>
 
-        <div class="meal-card" style="padding: 24px; text-align: center;">
-          <span style="font-size: 2.5rem;">🫘</span>
-          <h4 style="margin-top: 12px;">Soy</h4>
-          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Excluded from all Stage 1 purees. Filterable in portal.</p>
+        <!-- Allergen 4: Soy (4.jpg) -->
+        <div class="allergen-card" onclick="openAllergenDetailModal('soy')" role="button" tabindex="0" aria-label="Review Soy allergy policy">
+          <div class="allergen-card-media">
+            <img src="assets/images/4.jpg" alt="Organic non-GMO soybeans and edamame" class="allergen-card-img" loading="lazy">
+            <span class="allergen-badge-overlay">Stage 4 Only</span>
+          </div>
+          <div class="allergen-card-body">
+            <div class="allergen-card-header">
+              <h4 class="allergen-card-title">Soy &amp; Edamame</h4>
+              <span class="allergen-pill-status">Puree Excluded</span>
+            </div>
+            <p class="allergen-card-desc">Excluded from all Stage 1 &amp; 2 baby purées. Sparingly featured in Stage 4 toddler bowls.</p>
+            <div class="allergen-card-footer">
+              <span>🛡️ Sealed Quarantine</span>
+              <span class="allergen-action-link">View Protocol →</span>
+            </div>
+          </div>
         </div>
 
-        <div class="meal-card" style="padding: 24px; text-align: center;">
-          <span style="font-size: 2.5rem;">🥜</span>
-          <h4 style="margin-top: 12px;">Peanuts</h4>
-          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Completely peanut-free kitchen environment.</p>
+        <!-- Allergen 5: Peanuts (5.jpg) -->
+        <div class="allergen-card" onclick="openAllergenDetailModal('peanuts')" role="button" tabindex="0" aria-label="Review Peanuts safety policy">
+          <div class="allergen-card-media">
+            <img src="assets/images/5.jpg" alt="Whole peanuts and peanut shells" class="allergen-card-img" loading="lazy">
+            <span class="allergen-badge-overlay allergen-badge-safe">100% Nut-Free</span>
+          </div>
+          <div class="allergen-card-body">
+            <div class="allergen-card-header">
+              <h4 class="allergen-card-title">Peanuts</h4>
+              <span class="allergen-pill-status" style="background: rgba(16, 185, 129, 0.15); color: #10B981;">0% Contact</span>
+            </div>
+            <p class="allergen-card-desc">Completely peanut-free kitchen environment. Absolute zero peanut processing across our entire facility.</p>
+            <div class="allergen-card-footer">
+              <span>🔒 Zero-Trace Guarantee</span>
+              <span class="allergen-action-link">View Protocol →</span>
+            </div>
+          </div>
         </div>
 
-        <div class="meal-card" style="padding: 24px; text-align: center;">
-          <span style="font-size: 2.5rem;">🌰</span>
-          <h4 style="margin-top: 12px;">Tree Nuts</h4>
-          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Tree nut-free standard kitchen facility.</p>
+        <!-- Allergen 6: Tree Nuts (6.jpg) -->
+        <div class="allergen-card" onclick="openAllergenDetailModal('tree-nuts')" role="button" tabindex="0" aria-label="Review Tree Nuts safety policy">
+          <div class="allergen-card-media">
+            <img src="assets/images/6.jpg" alt="Assorted organic tree nuts in bowl" class="allergen-card-img" loading="lazy">
+            <span class="allergen-badge-overlay allergen-badge-safe">100% Nut-Free</span>
+          </div>
+          <div class="allergen-card-body">
+            <div class="allergen-card-header">
+              <h4 class="allergen-card-title">Tree Nuts</h4>
+              <span class="allergen-pill-status" style="background: rgba(16, 185, 129, 0.15); color: #10B981;">Dedicated Facility</span>
+            </div>
+            <p class="allergen-card-desc">Certified tree nut-free standard kitchen facility. Zero almonds, walnuts, cashews, or pecans.</p>
+            <div class="allergen-card-footer">
+              <span>🔒 ELISA Lab Screened</span>
+              <span class="allergen-action-link">View Protocol →</span>
+            </div>
+          </div>
         </div>
 
-        <div class="meal-card" style="padding: 24px; text-align: center;">
-          <span style="font-size: 2.5rem;">🐟</span>
-          <h4 style="margin-top: 12px;">Fish</h4>
-          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Selected toddler dinners contain wild salmon. Tagged.</p>
+        <!-- Allergen 7: Fish (7.jpg) -->
+        <div class="allergen-card" onclick="openAllergenDetailModal('fish')" role="button" tabindex="0" aria-label="Review Fish and Salmon policy">
+          <div class="allergen-card-media">
+            <img src="assets/images/7.jpg" alt="Wild Alaskan salmon fillet on cutting board" class="allergen-card-img" loading="lazy">
+            <span class="allergen-badge-overlay">Wild Salmon Only</span>
+          </div>
+          <div class="allergen-card-body">
+            <div class="allergen-card-header">
+              <h4 class="allergen-card-title">Fish &amp; Salmon</h4>
+              <span class="allergen-pill-status">Boldly Labeled</span>
+            </div>
+            <p class="allergen-card-desc">Selected toddler dinners contain wild Alaskan salmon. Prepped on isolated sanitized lines and clearly tagged.</p>
+            <div class="allergen-card-footer">
+              <span>🐟 Isolated Sanitized Line</span>
+              <span class="allergen-action-link">View Protocol →</span>
+            </div>
+          </div>
         </div>
 
-        <div class="meal-card" style="padding: 24px; text-align: center;">
-          <span style="font-size: 2.5rem;">🌱</span>
-          <h4 style="margin-top: 12px;">Sesame</h4>
-          <p class="text-muted" style="font-size: 0.85rem; margin-top: 6px;">Optional tahini glazes in Stage 4. Filterable in settings.</p>
+        <!-- Allergen 8: Sesame (8.jpg) -->
+        <div class="allergen-card" onclick="openAllergenDetailModal('sesame')" role="button" tabindex="0" aria-label="Review Sesame policy">
+          <div class="allergen-card-media">
+            <img src="assets/images/8.jpg" alt="Organic white and black sesame seeds in wooden spoon" class="allergen-card-img" loading="lazy">
+            <span class="allergen-badge-overlay">Optional Glaze</span>
+          </div>
+          <div class="allergen-card-body">
+            <div class="allergen-card-header">
+              <h4 class="allergen-card-title">Sesame</h4>
+              <span class="allergen-pill-status">1-Click Filterable</span>
+            </div>
+            <p class="allergen-card-desc">Optional tahini glazes featured only in select Stage 4 toddler bowls. Excluded with 1-click in portal.</p>
+            <div class="allergen-card-footer">
+              <span>🌱 Airtight Storage</span>
+              <span class="allergen-action-link">View Protocol →</span>
+            </div>
+          </div>
         </div>
 
       </div>

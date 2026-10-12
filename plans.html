@@ -100,81 +100,87 @@
   </section>
 
   <!-- PLANS SECTION 02 — PLAN COMPARISON -->
-  <section class="section section-bg-alt">
+  <section class="section section-bg-alt" id="plans">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 40px; font-size: 0.85rem; color: var(--text-muted);">
-        <em>Note: All pricing shown below is sample demonstration pricing only.</em>
-      </div>
+      
 
-      <div class="meal-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-        
+      <div class="meal-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
         <!-- Plan 1 -->
-        <div class="meal-card" style="padding: 32px;">
-          <span class="meal-badge" style="align-self: flex-start;">STARTER</span>
-          <h3 style="margin-top: 16px;">LITTLE START</h3>
-          <div style="font-size: 2.25rem; font-weight: 700; margin: 16px 0; color: var(--text-main);">$42 <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">/ week</span></div>
-          <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 24px;">Ideal for early tasters and complementary solids.</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; font-size: 0.9rem;">
+        <div class="meal-card pricing-plan-card">
+          <div class="pricing-plan-badge-wrap">
+            <span class="meal-badge">STARTER</span>
+          </div>
+          <h3 class="pricing-plan-title">LITTLE START</h3>
+          <div class="pricing-plan-price">$42 <span>/ week</span></div>
+          <p class="pricing-plan-desc">Ideal for early tasters and complementary solids.</p>
+          <ul class="pricing-plan-list">
             <li>✓ 6 meals per week</li>
             <li>✓ Weekly delivery</li>
             <li>✓ Full stage menu access</li>
             <li>✓ Basic allergy filtering</li>
             <li>✓ Skip or pause anytime</li>
           </ul>
-          <a href="login.html" class="btn btn-outline" style="width: 100%;">Choose Plan →</a>
+          <button type="button" class="btn btn-outline pricing-plan-btn" onclick="openPlanModal('Little Start', 42, '6 meals / week', 'STARTER', 'Ideal for early tasters and complementary solids.')">Choose Plan →</button>
         </div>
 
         <!-- Plan 2 (Featured) -->
-        <div class="meal-card" style="padding: 32px; border: 2px solid var(--color-primary); background: var(--bg-surface); position: relative;">
-          <span class="meal-badge" style="background: var(--color-primary); color: #FFFFFF; align-self: flex-start;">POPULAR CHOICE</span>
-          <h3 style="margin-top: 16px;">GROWING TABLE</h3>
-          <div style="font-size: 2.25rem; font-weight: 700; margin: 16px 0; color: var(--text-main);">$78 <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">/ week</span></div>
-          <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 24px;">Our most popular plan for active growing toddlers.</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; font-size: 0.9rem;">
+        <div class="meal-card pricing-plan-card" style="border: 2px solid var(--color-primary); background: var(--bg-surface); position: relative;">
+          <div class="pricing-plan-badge-wrap">
+            <span class="meal-badge" style="background: var(--color-primary); color: #FFFFFF;">POPULAR CHOICE</span>
+          </div>
+          <h3 class="pricing-plan-title">GROWING TABLE</h3>
+          <div class="pricing-plan-price">$78 <span>/ week</span></div>
+          <p class="pricing-plan-desc">Our most popular plan for active growing toddlers.</p>
+          <ul class="pricing-plan-list">
             <li>✓ 12 meals per week</li>
             <li>✓ Weekly priority delivery</li>
-            <li>✓ Unlimited menu customization</li>
+            <li>✓ Unlimited customization</li>
             <li>✓ Advanced allergen controls</li>
             <li>✓ Priority support access</li>
           </ul>
-          <a href="login.html" class="btn btn-primary" style="width: 100%;">Choose Plan →</a>
+          <button type="button" class="btn btn-primary pricing-plan-btn" onclick="openPlanModal('Growing Table', 78, '12 meals / week', 'POPULAR CHOICE', 'Our most popular plan for active growing toddlers.')">Choose Plan →</button>
         </div>
 
         <!-- Plan 3 -->
-        <div class="meal-card" style="padding: 32px;">
-          <span class="meal-badge" style="align-self: flex-start;">FAMILY</span>
-          <h3 style="margin-top: 16px;">FAMILY FLOW</h3>
-          <div style="font-size: 2.25rem; font-weight: 700; margin: 16px 0; color: var(--text-main);">$112 <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">/ week</span></div>
-          <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 24px;">Flexible multi-child family meal schedule.</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; font-size: 0.9rem;">
+        <div class="meal-card pricing-plan-card pricing-plan-card-third">
+          <div class="pricing-plan-badge-wrap">
+            <span class="meal-badge">FAMILY</span>
+          </div>
+          <h3 class="pricing-plan-title">FAMILY FLOW</h3>
+          <div class="pricing-plan-price">$112 <span>/ week</span></div>
+          <p class="pricing-plan-desc">Flexible multi-child family meal schedule.</p>
+          <ul class="pricing-plan-list">
             <li>✓ 18 meals per week</li>
             <li>✓ Multi-child stage profiles</li>
             <li>✓ Custom delivery dates</li>
             <li>✓ Dedicated family support</li>
+            <li>✓ Free cold-pack delivery</li>
           </ul>
-          <a href="login.html" class="btn btn-outline" style="width: 100%;">Choose Plan →</a>
+          <button type="button" class="btn btn-outline pricing-plan-btn" onclick="openPlanModal('Family Flow', 112, '18 meals / week', 'FAMILY', 'Flexible multi-child family meal schedule.')">Choose Plan →</button>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- PLANS SECTION 03 — HOW SUBSCRIPTION WORKS -->
-  <section class="section">
+  <!-- PLANS SECTION 03 — HOW SUBSCRIPTION WORKS (REDESIGNED PROCESS) -->
+  <section class="section process-workflow-section" id="how-it-works">
     <div class="container text-center">
       <div class="section-header">
-        <span class="section-tag">THE PROCESS</span>
+        <span class="section-tag glow-tag">THE PROCESS</span>
         <h2>How Your Weekly Plan Works</h2>
-        <p class="text-muted" style="max-width: 620px; margin: 12px auto 0;">Effortless, organic nutrition for your growing child in 5 simple steps.</p>
+        <p class="text-muted" style="max-width: 660px; margin: 12px auto 0;">
+          From your first customized box to doorstep chilled delivery and effortless portal controls — nourishing your child takes just 5 simple steps.
+        </p>
       </div>
 
-      <div class="journey-timeline-5col">
+      <div class="process-steps-grid">
         
         <!-- Step 1 -->
-        <div class="journey-step-card">
-          <div class="journey-step-header">
-            <span class="journey-step-num">01</span>
-            <div class="journey-step-svg-icon">
+        <div class="process-card">
+          <div class="process-card-header">
+            <span class="process-step-badge">Step 01</span>
+            <div class="process-icon-box">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
                 <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
@@ -182,18 +188,17 @@
               </svg>
             </div>
           </div>
-          <div>
-            <span class="journey-step-tag">Weekly Capacity</span>
-            <h4>1. Choose Plan</h4>
-            <p>Select 6, 12, or 18 weekly jars tailored to your baby's daily appetite.</p>
-          </div>
+          <span class="process-tag-pill">WEEKLY CAPACITY</span>
+          <h4 class="process-card-title">Choose Plan Capacity</h4>
+          <p class="process-card-desc">Select 6, 12, or 18 weekly jars tailored to your baby's daily feeding rhythm.</p>
+          <span class="process-card-chip">🌱 3 Flexible Sizes</span>
         </div>
 
         <!-- Step 2 -->
-        <div class="journey-step-card">
-          <div class="journey-step-header">
-            <span class="journey-step-num">02</span>
-            <div class="journey-step-svg-icon">
+        <div class="process-card">
+          <div class="process-card-header">
+            <span class="process-step-badge">Step 02</span>
+            <div class="process-icon-box">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="4" y1="21" x2="4" y2="14"/>
                 <line x1="4" y1="10" x2="4" y2="3"/>
@@ -207,69 +212,79 @@
               </svg>
             </div>
           </div>
-          <div>
-            <span class="journey-step-tag">Tailored Meals</span>
-            <h4>2. Personalize</h4>
-            <p>Select age-stage textures and filter out any allergen preferences.</p>
-          </div>
+          <span class="process-tag-pill">TAILORED NUTRITION</span>
+          <h4 class="process-card-title">Personalize Textures</h4>
+          <p class="process-card-desc">Filter stage textures and exclude specific food allergens with instant ease.</p>
+          <span class="process-card-chip">🛡️ 100% Allergen Safe</span>
         </div>
 
         <!-- Step 3 -->
-        <div class="journey-step-card">
-          <div class="journey-step-header">
-            <span class="journey-step-num">03</span>
-            <div class="journey-step-svg-icon">
+        <div class="process-card">
+          <div class="process-card-header">
+            <span class="process-step-badge">Step 03</span>
+            <div class="process-icon-box">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
               </svg>
             </div>
           </div>
-          <div>
-            <span class="journey-step-tag">Fresh Organic Prep</span>
-            <h4>3. Steam Cook</h4>
-            <p>Our kitchen steam cooks your small-batch order with 100% organic produce.</p>
-          </div>
+          <span class="process-tag-pill">ORGANIC STEAM PREP</span>
+          <h4 class="process-card-title">Gentle Steam Cooking</h4>
+          <p class="process-card-desc">Our chefs steam cook small batches to lock in vibrant flavor and key vitamins.</p>
+          <span class="process-card-chip">🔥 Nutrients Locked</span>
         </div>
 
         <!-- Step 4 -->
-        <div class="journey-step-card">
-          <div class="journey-step-header">
-            <span class="journey-step-num">04</span>
-            <div class="journey-step-svg-icon">
+        <div class="process-card">
+          <div class="process-card-header">
+            <span class="process-step-badge">Step 04</span>
+            <div class="process-icon-box">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="1" y="3" width="15" height="13" rx="2" ry="2"/>
-                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 8"/>
                 <circle cx="5.5" cy="18.5" r="2.5"/>
                 <circle cx="18.5" cy="18.5" r="2.5"/>
               </svg>
             </div>
           </div>
-          <div>
-            <span class="journey-step-tag">Thursday Arrival</span>
-            <h4>4. Chilled Delivery</h4>
-            <p>Arrives weekly in a 100% compostable chilled box straight to your door.</p>
-          </div>
+          <span class="process-tag-pill">COLD-CHAIN ARRIVAL</span>
+          <h4 class="process-card-title">Eco-Chilled Delivery</h4>
+          <p class="process-card-desc">Arrives in 100% compostable insulated cold-boxes guaranteed fresh for 48 hours.</p>
+          <span class="process-card-chip">❄️ Chilled to Doorstep</span>
         </div>
 
         <!-- Step 5 -->
-        <div class="journey-step-card">
-          <div class="journey-step-header">
-            <span class="journey-step-num">05</span>
-            <div class="journey-step-svg-icon">
+        <div class="process-card">
+          <div class="process-card-header">
+            <span class="process-step-badge">Step 05</span>
+            <div class="process-icon-box">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="3"/>
                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
               </svg>
             </div>
           </div>
-          <div>
-            <span class="journey-step-tag">Parent Portal</span>
-            <h4>5. Portal Control</h4>
-            <p>Pause, skip any week, or change recipes anytime with 1 click in your portal.</p>
-          </div>
+          <span class="process-tag-pill">1-CLICK PORTAL</span>
+          <h4 class="process-card-title">Flexible Portal Control</h4>
+          <p class="process-card-desc">Pause, skip deliveries, or swap recipes anytime with 1-click in your portal.</p>
+          <span class="process-card-chip">⚡ Zero Commitment</span>
         </div>
 
       </div>
+
+      <!-- Process Reassurance Strip -->
+      <div class="process-reassurance-strip">
+        <div class="process-reassurance-text">
+          <span class="process-reassurance-icon">✨</span>
+          <div>
+            <strong>Complete Parent Control Guarantee:</strong> No contracts, no cancellation fees. Modify, pause, or cancel before Wednesday midnight every week.
+          </div>
+        </div>
+        <a href="#plans" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.88rem; white-space: nowrap;">
+          View Plan Options ↑
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -436,16 +451,78 @@
       </div>
 
       <!-- Eco-Friendly Packaging Feature -->
-      <div style="margin-bottom: 48px; border-radius: var(--radius-lg); overflow: hidden; background: var(--bg-surface); border: 1px solid var(--border-color); display: grid; grid-template-columns: 1fr 1fr; align-items: center; text-align: left;">
-        <div style="padding: 36px;">
-          <span class="section-tag">SUSTAINABLE PACKAGING</span>
-          <h3 style="font-size: 1.5rem; margin-top: 8px; margin-bottom: 12px;">100% Recyclable & Insulated Delivery Box</h3>
-          <p class="text-muted" style="font-size: 0.92rem; line-height: 1.6;">
-            Every weekly meal box is packed with non-toxic thermal insulation, recyclable glass jars, and biodegradable gel packs to ensure planet-friendly freshness.
+      <div class="eco-packaging-card">
+        <div class="eco-packaging-content">
+          <span class="section-tag glow-tag" style="align-self: flex-start;">SUSTAINABLE PACKAGING</span>
+          <h3 class="eco-packaging-heading">100% Recyclable &amp; Insulated Delivery Box</h3>
+          <p class="eco-packaging-desc">
+            Every weekly meal box is custom-engineered with compostable thermal lining, reusable glass jars, and non-toxic cold packs to ensure 48-hour doorstep freshness while keeping our planet clean.
           </p>
+
+          <!-- 4 Feature Highlights Grid -->
+          <div class="eco-packaging-grid">
+            <div class="eco-packaging-pill">
+              <div class="eco-packaging-pill-icon">❄️</div>
+              <div>
+                <div class="eco-packaging-pill-title">48-Hour Cold Hold</div>
+                <div class="eco-packaging-pill-desc">Guaranteed sub-4°C chill safe on doorstep in all seasons.</div>
+              </div>
+            </div>
+
+            <div class="eco-packaging-pill">
+              <div class="eco-packaging-pill-icon">🌾</div>
+              <div>
+                <div class="eco-packaging-pill-title">Dissolvable Padding</div>
+                <div class="eco-packaging-pill-desc">100% compostable cornstarch insulation dissolves in warm sink water.</div>
+              </div>
+            </div>
+
+            <div class="eco-packaging-pill">
+              <div class="eco-packaging-pill-icon">🫙</div>
+              <div>
+                <div class="eco-packaging-pill-title">Heavy-Duty Glass Jars</div>
+                <div class="eco-packaging-pill-desc">100% plastic-free, reusable, and endlessly recyclable curbside.</div>
+              </div>
+            </div>
+
+            <div class="eco-packaging-pill">
+              <div class="eco-packaging-pill-icon">🌱</div>
+              <div>
+                <div class="eco-packaging-pill-title">Drain-Safe Gel Packs</div>
+                <div class="eco-packaging-pill-desc">Non-toxic bio-coolant safe to nourish garden plants or reuse.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust Metric Strip -->
+          <div class="eco-packaging-stats">
+            <div>
+              <div class="eco-packaging-stat-num">48 Hrs</div>
+              <div class="eco-packaging-stat-label">Chilled Cold-Chain</div>
+            </div>
+            <div>
+              <div class="eco-packaging-stat-num">0%</div>
+              <div class="eco-packaging-stat-label">Styrofoam / Plastics</div>
+            </div>
+            <div>
+              <div class="eco-packaging-stat-num">100%</div>
+              <div class="eco-packaging-stat-label">Curbside Recyclable</div>
+            </div>
+          </div>
+
+          <!-- Action CTA Row -->
+          <div class="eco-packaging-actions">
+            <button type="button" class="btn btn-primary" onclick="openPlanModal('Growing Table', 78, '12 meals / week', 'ECO PACKAGING', 'Delivered fresh in 100% recyclable insulated delivery boxes.')" style="padding: 12px 24px; font-size: 0.9rem;">
+              Choose Eco-Delivery Plan →
+            </button>
+            <a href="about.html" class="btn btn-outline" style="padding: 12px 20px; font-size: 0.9rem;">
+              Explore Kitchen Safety
+            </a>
+          </div>
         </div>
-        <div style="height: 100%; min-height: 260px;">
-          <img src="assets/images/quality-eco-packaging.jpg" alt="Eco-friendly packaging process for baby meal box" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+
+        <div class="eco-packaging-img-col">
+          <img src="assets/images/a1.png" alt="Eco-friendly packaging process for baby meal box" loading="lazy">
         </div>
       </div>
 
@@ -544,6 +621,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Shared Modal Overlay Container -->
+  <div class="modal-overlay" id="public-modal">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close Modal">×</button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
 
   <!-- Floating Back to Top Button -->
   <button class="back-to-top" id="backToTopBtn" aria-label="Back to top" title="Back to top">

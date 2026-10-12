@@ -193,6 +193,14 @@ function initMealCatalog() {
       btn.classList.add('active');
 
       const cat = btn.getAttribute('data-cat');
+      const mealGrid = document.querySelector('.meal-grid');
+      if (mealGrid) {
+        if (cat === 'all') {
+          mealGrid.classList.remove('is-filtered');
+        } else {
+          mealGrid.classList.add('is-filtered');
+        }
+      }
       mealCards.forEach(card => {
         if (cat === 'all' || card.getAttribute('data-category') === cat) {
           card.style.display = 'flex';
@@ -221,10 +229,16 @@ function initModalSystem() {
   modalOverlay.addEventListener('click', (e) => {
     if (e.target === modalOverlay) closeModal();
   });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+      closeModal();
+    }
+  });
 
   // Attach click listener to meal cards for detail view
   document.querySelectorAll('.meal-card').forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.meal-card-order-btn')) return;
       const name = card.getAttribute('data-name') || 'Wholesome Meal';
       const stage = card.getAttribute('data-stage') || 'All Stages';
       const ingredients = card.getAttribute('data-ingredients') || 'Organic produce';
@@ -245,7 +259,10 @@ function initModalSystem() {
             <div style="margin-top: 6px;"><strong>Allergen Safety:</strong> No major allergens present.</div>
             <div style="margin-top: 6px; font-size: 0.8rem; color: var(--text-muted);">Note: Parents should review ingredient lists prior to serving.</div>
           </div>
-          <button class="btn btn-primary" style="width: 100%;" onclick="addPreferenceDemo('${name}')">Add to Weekly Preferences →</button>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button class="btn btn-primary" style="flex: 1; padding: 12px;" onclick="openOrderModal(event, '${name}', '${stage}')">Order Now →</button>
+            <button class="btn btn-outline" style="flex: 1; padding: 12px;" onclick="addPreferenceDemo('${name}')">Add to Preferences</button>
+          </div>
         `;
       }
 
@@ -254,10 +271,346 @@ function initModalSystem() {
   });
 }
 
+window.openOrderModal = function(event, mealName, stage) {
+  if (event) {
+    event.stopPropagation();
+  }
+  const modalOverlay = document.getElementById('public-modal');
+  if (!modalOverlay) return;
+
+  const modalBody = modalOverlay.querySelector('.modal-body');
+  if (modalBody) {
+    modalBody.innerHTML = `
+      <div style="text-align: center; margin-bottom: 20px;">
+        <span class="meal-badge" style="margin-bottom: 8px; display: inline-block;">Fresh Kitchen Order</span>
+        <h3 style="font-size: 1.4rem; margin-bottom: 6px;">Order ${mealName}</h3>
+        <p class="text-muted" style="font-size: 0.9rem;">Freshly prepared organic batch · ${stage || 'Milestone Stage'}</p>
+      </div>
+
+      <form onsubmit="handleMealOrderSubmit(event, '${mealName}')" style="display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px;">Portion & Quantity</label>
+          <select style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.9rem; background: var(--bg-surface); color: var(--text-main);">
+            <option value="4pack">4 × 4oz Glass Jars ($23.80)</option>
+            <option value="8pack" selected>8 × 4oz Glass Jars ($44.50 — Most Popular)</option>
+            <option value="12pack">12 × 4oz Weekly Batch Pack ($62.90)</option>
+            <option value="sampler">Sampler Variety Add-On ($15.00)</option>
+          </select>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px;">Texture Customization</label>
+            <select style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.9rem; background: var(--bg-surface); color: var(--text-main);">
+              <option value="standard">Standard Milestone Recipe</option>
+              <option value="extra-smooth">Extra Smooth Puree</option>
+              <option value="chunky">Soft Textured Mash</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px;">Delivery Day</label>
+            <select style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.9rem; background: var(--bg-surface); color: var(--text-main);">
+              <option value="tuesday">Tuesday Morning Delivery</option>
+              <option value="friday">Friday Morning Delivery</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-alt); padding: 12px 14px; border-radius: 8px; font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+          <span>❄️</span>
+          <span>Delivered fresh in compostable insulated cold-box with eco ice packs.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 13px; margin-top: 4px; font-size: 0.95rem;">
+          Confirm &amp; Place Order →
+        </button>
+      </form>
+    `;
+  }
+
+  modalOverlay.classList.add('active');
+};
+
+window.handleMealOrderSubmit = function(event, mealName) {
+  event.preventDefault();
+  showToast(`"${mealName}" order confirmed! Prepared fresh for your delivery.`);
+  const modalOverlay = document.getElementById('public-modal');
+  if (modalOverlay) modalOverlay.classList.remove('active');
+};
+
 window.addPreferenceDemo = function(mealName) {
   showToast(`Added "${mealName}" to your preferences!`);
   const modalOverlay = document.getElementById('public-modal');
   if (modalOverlay) modalOverlay.classList.remove('active');
+};
+
+/* --------------------------------------------------------------------------
+   06B. CHOOSE PLAN INTERACTIVE MODAL (CUSTOMIZE & SUBSCRIBE)
+   -------------------------------------------------------------------------- */
+window.openPlanModal = function(planName, price, mealsPerWeek, badge, description) {
+  const modalOverlay = document.getElementById('public-modal');
+  if (!modalOverlay) return;
+
+  const modalBody = modalOverlay.querySelector('.modal-body');
+  if (modalBody) {
+    modalBody.innerHTML = `
+      <div style="text-align: center; margin-bottom: 22px;">
+        <span class="meal-badge" style="background: var(--color-primary); color: #FFFFFF; margin-bottom: 10px; display: inline-block;">${badge || 'SUBSCRIPTION PLAN'}</span>
+        <h3 style="font-size: 1.6rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">${planName} Plan</h3>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--color-primary); margin: 6px 0;">
+          $${price} <span style="font-size: 0.95rem; font-weight: 500; color: var(--text-muted);">/ week</span>
+        </div>
+        <p class="text-muted" style="font-size: 0.9rem; max-width: 480px; margin: 0 auto; line-height: 1.5;">
+          ${description} · <strong>${mealsPerWeek}</strong>
+        </p>
+      </div>
+
+      <form onsubmit="handlePlanConfirmSubmit(event, '${planName}', '${price}')" style="display: flex; flex-direction: column; gap: 16px;">
+        
+        <!-- Milestone Stage Selection -->
+        <div>
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: var(--text-main);">
+            Child's Milestone Stage *
+          </label>
+          <select id="planStageSelect" required style="width: 100%; padding: 11px 14px; border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.92rem; background: var(--bg-alt); color: var(--text-main); outline: none;">
+            <option value="Stage 1: First Tastes (4–6 Mo)" ${planName === 'Little Start' ? 'selected' : ''}>Stage 1: First Tastes (4–6 Mo — Silky Smooth Purees)</option>
+            <option value="Stage 2: Flavor Explorer (6–8 Mo)" ${planName === 'Growing Table' ? 'selected' : ''}>Stage 2: Flavor Explorer (6–8 Mo — Gentle Mash & Blends)</option>
+            <option value="Stage 3: Texture Adventure (9–12 Mo)">Stage 3: Texture Adventure (9–12 Mo — Soft Chews & Grains)</option>
+            <option value="Toddler Table (12+ Mo)" ${planName === 'Family Flow' ? 'selected' : ''}>Toddler Table (12+ Mo — Nutritious Chunkier Bites)</option>
+            <option value="Multi-Stage Family Mix">Multi-Stage Family Mix (Multi-child Customized)</option>
+          </select>
+        </div>
+
+        <!-- Allergen Exclusions -->
+        <div>
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">
+            Dietary & Allergen Exclusions
+          </label>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px;">
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; background: var(--bg-alt); padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; color: var(--text-main);">
+              <input type="checkbox" name="allergen" value="nut-free" checked style="accent-color: var(--color-primary);"> 🥜 100% Nut-Free
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; background: var(--bg-alt); padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; color: var(--text-main);">
+              <input type="checkbox" name="allergen" value="dairy-free" style="accent-color: var(--color-primary);"> 🥛 Dairy-Free
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; background: var(--bg-alt); padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; color: var(--text-main);">
+              <input type="checkbox" name="allergen" value="gluten-free" style="accent-color: var(--color-primary);"> 🌾 Gluten-Free
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.82rem; background: var(--bg-alt); padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; color: var(--text-main);">
+              <input type="checkbox" name="allergen" value="egg-free" style="accent-color: var(--color-primary);"> 🥚 Egg-Free
+            </label>
+          </div>
+        </div>
+
+        <!-- Delivery Day & Billing Cadence -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: var(--text-main);">
+              Weekly Delivery Day
+            </label>
+            <select id="planDeliveryDay" style="width: 100%; padding: 11px 12px; border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.9rem; background: var(--bg-alt); color: var(--text-main); outline: none;">
+              <option value="Tuesday">Tuesday Morning</option>
+              <option value="Friday">Friday Morning</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: var(--text-main);">
+              Billing Cadence
+            </label>
+            <select id="planCadence" style="width: 100%; padding: 11px 12px; border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.9rem; background: var(--bg-alt); color: var(--text-main); outline: none;">
+              <option value="Weekly">Weekly ($${price} / week)</option>
+              <option value="Monthly">Monthly (-10% Savings)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Reassurance & Zero Commitment Strip -->
+        <div style="background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.08) 0%, rgba(226, 149, 120, 0.06) 100%); border: 1px solid rgba(var(--color-primary-rgb), 0.25); padding: 12px 16px; border-radius: 8px; font-size: 0.82rem; color: var(--text-main); display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.25rem;">✨</span>
+          <div>
+            <strong>Zero Commitment Guarantee:</strong> Modify meals, skip weeks, or pause anytime before Wednesday midnight in your Parent Portal.
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 0.98rem; font-weight: 700; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 14px rgba(var(--color-primary-rgb), 0.35);">
+          Confirm Plan &amp; Continue to Portal →
+        </button>
+
+        <div style="text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+          Already have an account? <a href="login.html" class="auth-link-bold" style="color: var(--color-primary); font-weight: 600;">Sign In</a>
+        </div>
+      </form>
+    `;
+  }
+
+  modalOverlay.classList.add('active');
+};
+
+window.handlePlanConfirmSubmit = function(event, planName, price) {
+  event.preventDefault();
+  const stage = document.getElementById('planStageSelect')?.value || 'Stage 1';
+  const day = document.getElementById('planDeliveryDay')?.value || 'Tuesday';
+  const cadence = document.getElementById('planCadence')?.value || 'Weekly';
+
+  const planSelection = {
+    plan: planName,
+    price: price,
+    stage: stage,
+    deliveryDay: day,
+    cadence: cadence,
+    selectedAt: new Date().toISOString()
+  };
+
+  try {
+    localStorage.setItem('nourish_selected_plan', JSON.stringify(planSelection));
+  } catch(e) {
+    console.warn(e);
+  }
+
+  showToast(`"${planName}" plan selected! Loading your Parent Portal...`);
+  const modalOverlay = document.getElementById('public-modal');
+  if (modalOverlay) modalOverlay.classList.remove('active');
+
+  setTimeout(() => {
+    window.location.href = 'dashboard.html';
+  }, 1100);
+};
+
+/* --------------------------------------------------------------------------
+   06C. ALLERGEN DETAIL & MANAGEMENT MODAL
+   -------------------------------------------------------------------------- */
+const allergenDataDetails = {
+  'milk': {
+    name: 'Milk & Dairy',
+    img: 'assets/images/1.jpg',
+    status: 'Clearly Tagged',
+    policy: 'Present only in select Stage 3/4 toddler meals (such as toddler cheese ravioli and creamy risottos). Completely absent in all Stage 1 and Stage 2 infant purées.',
+    kitchen: 'Dedicated steam cookers and utensils are used for dairy-containing batches, followed by triple-rinse sanitization.',
+    safeStages: 'Stage 1 & 2: 100% Dairy-Free • Stage 3/4: Clearly Flagged',
+    filterTip: 'Toggle "Dairy-Free" in your Parent Portal to automatically substitute any dairy recipes with plant-based alternatives.'
+  },
+  'egg': {
+    name: 'Egg Allergens',
+    img: 'assets/images/2.jpg',
+    status: 'Toddler Textures Only',
+    policy: 'Used exclusively in specialized toddler pasta textures and bakes. Completely excluded from baby purées and infant blends.',
+    kitchen: 'Prepared on isolated sanitized production lines. Allergen-certified test swabs verify zero egg protein residue before infant batches.',
+    safeStages: 'Stage 1, 2 & 3: 100% Egg-Free • Stage 4: Tagged Toddler Bakes',
+    filterTip: 'Easily excluded with 1-click in your account settings; our chefs will substitute with lentil and seed-based proteins.'
+  },
+  'wheat': {
+    name: 'Wheat & Gluten',
+    img: 'assets/images/3.jpg',
+    status: 'Gluten-Free Swaps Available',
+    policy: 'Present in select organic toddler pastas and oat bowls. Certified gluten-free grain alternatives (quinoa, millet, brown rice) available for every recipe.',
+    kitchen: 'Dedicated gluten-free batch days prevent airborne dust cross-contact.',
+    safeStages: 'Gluten-Free Purees & Bowls Available for Every Stage',
+    filterTip: 'Select "Gluten-Free" in dietary preferences to lock in only 100% certified gluten-free weekly deliveries.'
+  },
+  'soy': {
+    name: 'Soy & Edamame',
+    img: 'assets/images/4.jpg',
+    status: 'Excluded in Stage 1 & 2',
+    policy: 'Strictly excluded from all Stage 1 & Stage 2 infant purées. Sparingly featured in Stage 4 toddler bowls and easily filtered out.',
+    kitchen: 'Soy ingredients are stored in sealed color-coded containers in our allergen quarantine zone.',
+    safeStages: 'Stage 1 & 2: 100% Soy-Free • Stage 4: Optional Ingredient',
+    filterTip: 'One click in your allergy matrix completely excludes all soy-derived ingredients from your weekly menu suggestions.'
+  },
+  'peanuts': {
+    name: 'Peanuts',
+    img: 'assets/images/5.jpg',
+    status: '100% Peanut-Free Facility',
+    policy: 'Our prep kitchen is a certified 100% peanut-free facility. We maintain absolute zero peanut processing across our entire ingredient supply.',
+    kitchen: 'Strict supplier verification guarantees no peanut contamination throughout our regenerative farm supply chain.',
+    safeStages: 'All Stages: 100% Peanut-Free Facility Guarantee',
+    filterTip: 'Zero risk of accidental exposure. Every jar in every delivery is 100% free of peanuts and peanut oils.'
+  },
+  'tree-nuts': {
+    name: 'Tree Nuts',
+    img: 'assets/images/6.jpg',
+    status: 'Dedicated Tree Nut-Free Kitchen',
+    policy: 'Zero almonds, walnuts, cashews, pecans, or tree nuts are processed in our kitchen facility. Complete safety for families with severe nut allergies.',
+    kitchen: 'Regular third-party ELISA lab screening validates zero tree nut trace proteins in our facility.',
+    safeStages: 'All Stages: 100% Tree Nut-Free Facility Guarantee',
+    filterTip: 'All Nourish Nest meals are 100% nut-free by kitchen standard. No toggling necessary.'
+  },
+  'fish': {
+    name: 'Fish & Salmon',
+    img: 'assets/images/7.jpg',
+    status: 'Wild Salmon Flagged',
+    policy: 'Selected toddler nutrient bowls contain sustainably caught wild Alaskan salmon. Prepped on isolated sanitized lines and boldly labeled.',
+    kitchen: 'Dedicated cold-prep station with isolated color-coded cutting boards, steam inserts, and immediate post-batch sanitation.',
+    safeStages: 'Stage 1 & 2: 100% Fish-Free • Stage 3/4: Wild Salmon Only',
+    filterTip: 'Toggle "Fish-Free" to replace seafood bowls with wholesome pasture-raised poultry or organic legume recipes.'
+  },
+  'sesame': {
+    name: 'Sesame',
+    img: 'assets/images/8.jpg',
+    status: 'Optional Stage 4 Only',
+    policy: 'Used as optional tahini dressings in select Stage 4 toddler bowls. Never blended into infant stages and 1-click filterable in your profile.',
+    kitchen: 'Sesame ingredients are quarantined and packaged separately with airtight seals.',
+    safeStages: 'Stage 1, 2 & 3: 100% Sesame-Free • Stage 4: Clearly Marked',
+    filterTip: 'Easily excluded in your Parent Portal allergy tab to enjoy sesame-free toddler favorites.'
+  }
+};
+
+window.openAllergenDetailModal = function(key) {
+  const data = allergenDataDetails[key];
+  if (!data) return;
+
+  const modalOverlay = document.getElementById('public-modal');
+  if (!modalOverlay) return;
+
+  const modalBody = modalOverlay.querySelector('.modal-body');
+  if (modalBody) {
+    modalBody.innerHTML = `
+      <div style="text-align: left;">
+        <div style="position: relative; width: 100%; height: 200px; border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
+          <img src="${data.img}" alt="${data.name}" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; top: 12px; right: 12px; background: rgba(30,24,20,0.8); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; backdrop-filter: blur(8px);">
+            ${data.status}
+          </div>
+        </div>
+
+        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 8px; color: var(--text-main);">
+          ${data.name} Management Protocol
+        </h3>
+        <p class="text-muted" style="font-size: 0.92rem; line-height: 1.6; margin-bottom: 18px;">
+          ${data.policy}
+        </p>
+
+        <div style="background: var(--bg-alt); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: 6px;">
+            🛡️ Kitchen Sanitation &amp; Isolation Protocol:
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-main); line-height: 1.5;">
+            ${data.kitchen}
+          </div>
+        </div>
+
+        <div style="background: rgba(var(--color-primary-rgb), 0.08); border: 1px solid rgba(var(--color-primary-rgb), 0.25); border-radius: 10px; padding: 14px 16px; margin-bottom: 22px;">
+          <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+            📋 Stage Availability:
+          </div>
+          <div style="font-size: 0.84rem; color: var(--text-muted);">
+            ${data.safeStages}
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="dashboard.html" class="btn btn-primary" style="flex: 1; padding: 12px 18px; text-align: center; font-size: 0.9rem;">
+            Manage Preferences in Portal →
+          </a>
+          <button type="button" class="btn btn-outline" onclick="document.getElementById('public-modal').classList.remove('active')" style="padding: 12px 20px; font-size: 0.9rem;">
+            Close
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  modalOverlay.classList.add('active');
 };
 
 /* --------------------------------------------------------------------------
@@ -912,4 +1265,167 @@ function initBackToTop() {
     });
   });
 }
+
+/* --------------------------------------------------------------------------
+   14. KITCHEN TEAM & EXPERT CONSULTATION MODALS (OUR KITCHEN PAGE)
+   -------------------------------------------------------------------------- */
+const kitchenTeamData = {
+  elena: {
+    name: 'Dr. Elena Vance, MD, FAAP',
+    role: 'Chief Pediatric Medical Advisor & Neonatal Specialist',
+    badge: 'Board Certified FAAP',
+    img: 'assets/images/team-dr-elena-vance.jpg',
+    education: 'Johns Hopkins School of Medicine (MD) • Children\'s National Hospital Residency',
+    experience: '16+ Years in Pediatric Gastroenterology & Infant Gut Microbiome',
+    bio: 'Dr. Elena Vance leads our clinical advisory panel, ensuring every age-stage texture and recipe introduction aligns precisely with neonatal physiology. She has authored over 12 peer-reviewed studies on early allergen tolerance and intestinal mucosal development in infants under 24 months.',
+    specialties: ['Infant Gut Health & Microbiome', 'Early Allergen Desensitization', 'Pediatric Chewing & Swallowing Textures', 'Micronutrient Deficiencies in Early Childhood'],
+    quote: '"Every ingredient is vetted through clinical infant physiology — we feed growing organs, not just appetites."'
+  },
+  marcus: {
+    name: 'Chef Marcus Chen, CEC',
+    role: 'Head of Pediatric Culinary Innovation',
+    badge: 'Culinary Institute of America',
+    img: 'assets/images/team-chef-marcus-chen.jpg',
+    education: 'The Culinary Institute of America (Hyde Park) • Certified Executive Chef',
+    experience: '18+ Years in Farm-to-Table Gastronomy & Pediatric Culinary Development',
+    bio: 'Former Michelin-starred Sous Chef and father of three, Chef Marcus re-imagines baby food by rejecting high-heat pressure pureeing. He developed our proprietary 98°C soft thermal steam chambers, which preserve produce cellular integrity, natural vibrant color, and sweet volatile aromatics without added salt or sugars.',
+    specialties: ['Soft-Steam Temperature Modulation', 'Sensory Palate Training for Toddlers', 'Heritage Grain & Legume Hydration', 'Naturally Balanced Savory Flavor Profiles'],
+    quote: '"Baby food should celebrate real flavors. Gentle steam cooking elevates the natural sweetness of organic heritage vegetables."'
+  },
+  priya: {
+    name: 'Dr. Priya Sharma, PhD, RDN',
+    role: 'Lead Pediatric Dietitian & Micronutrient Researcher',
+    badge: 'Cornell University Doctorate',
+    img: 'assets/images/team-dr-priya-sharma.jpg',
+    education: 'Cornell University (PhD in Nutritional Biochemistry) • Registered Dietitian Nutritionist (RDN)',
+    experience: '14+ Years Clinical Infant Nutrition Research & Pediatric Formulations',
+    bio: 'Dr. Priya Sharma bridges biochemical nutritional research with real-world infant feeding routines. Her primary focus is maximizing non-heme iron and zinc bioavailability through organic plant-acid pairing, and optimizing DHA-to-choline ratios for critical neurodevelopment in the first 1,000 days of life.',
+    specialties: ['Iron & Zinc Bioavailability Optimization', 'Neurodevelopmental DHA/Choline Synergy', 'Prebiotic & Probiotic Fiber Blends', 'Stage 1 through Stage 4 Macronutrient Tuning'],
+    quote: '"Every nutrient has a partner. We pair vitamin C with organic legumes so your baby absorbs maximum vital iron."'
+  },
+  sarah: {
+    name: 'Sarah Jenkins, MS, CFS',
+    role: 'Director of Food Safety & Quality Assurance',
+    badge: 'Certified Food Scientist',
+    img: 'assets/images/team-sarah-jenkins.jpg',
+    education: 'University of California, Davis (MS in Food Science & Microbiology) • CFS Certification',
+    experience: '14+ Years in Infant Food Safety Regulation & Cleanroom Operations',
+    bio: 'Formerly a senior food safety auditor for infant nutrition facilities, Sarah enforces our strict Zero-Tolerance heavy metal policy. She directs our independent third-party laboratory ICP-MS testing program, positive-pressure ISO-7 clean suites, and real-time cold-chain temperature telemetry.',
+    specialties: ['ICP-MS Heavy Metal Mass Spectrometry', 'Cross-Contact Allergen Separation Protocols', 'Positive-Pressure Cleanroom Microbiology', 'Cold-Chain Telemetry & Thermal Packaging Integrity'],
+    quote: '"Our zero-tolerance testing protocols provide parents with unconditional peace of mind every single meal."'
+  }
+};
+
+window.openExpertModal = function(expertKey) {
+  const expert = kitchenTeamData[expertKey];
+  if (!expert) return;
+
+  const modalOverlay = document.getElementById('public-modal');
+  if (!modalOverlay) return;
+
+  const modalBody = modalOverlay.querySelector('.modal-body');
+  if (modalBody) {
+    modalBody.innerHTML = `
+      <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;">
+        <img src="${expert.img}" alt="${expert.name}" style="width: 86px; height: 86px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary); box-shadow: 0 4px 14px rgba(var(--color-primary-rgb), 0.25);">
+        <div>
+          <span class="meal-badge" style="margin-bottom: 6px; display: inline-block;">${expert.badge}</span>
+          <h3 style="margin: 2px 0 4px; font-size: 1.25rem;">${expert.name}</h3>
+          <div style="color: var(--color-primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">${expert.role}</div>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-alt); padding: 14px 16px; border-radius: 12px; margin-bottom: 16px; font-size: 0.88rem; line-height: 1.6;">
+        <div style="margin-bottom: 4px;"><strong>🎓 Education:</strong> ${expert.education}</div>
+        <div><strong>💼 Clinical Scope:</strong> ${expert.experience}</div>
+      </div>
+
+      <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 18px;">
+        ${expert.bio}
+      </p>
+
+      <div style="margin-bottom: 20px;">
+        <strong style="display: block; font-size: 0.82rem; text-transform: uppercase; color: var(--text-main); margin-bottom: 8px; letter-spacing: 0.5px;">Key Areas of Clinical Focus:</strong>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          ${expert.specialties.map(s => `<span style="font-size: 0.78rem; background: var(--bg-surface); border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 50px; font-weight: 500;">✓ ${s}</span>`).join('')}
+        </div>
+      </div>
+
+      <div style="background: rgba(var(--color-primary-rgb), 0.08); border-left: 3px solid var(--color-primary); padding: 12px 16px; border-radius: 8px; font-style: italic; font-size: 0.85rem; color: var(--text-main); margin-bottom: 22px;">
+        ${expert.quote}
+      </div>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <button class="btn btn-primary" style="flex: 1; padding: 12px 18px;" onclick="openConsultationModal('${expert.name}')">Book Consultation With Expert →</button>
+        <button class="btn btn-outline" style="padding: 12px 18px;" onclick="closePublicModal()">Close</button>
+      </div>
+    `;
+  }
+
+  modalOverlay.classList.add('active');
+};
+
+window.openConsultationModal = function(preselectedExpert = '') {
+  const modalOverlay = document.getElementById('public-modal');
+  if (!modalOverlay) return;
+
+  const modalBody = modalOverlay.querySelector('.modal-body');
+  if (modalBody) {
+    modalBody.innerHTML = `
+      <div style="text-align: center; margin-bottom: 20px;">
+        <span class="meal-badge" style="margin-bottom: 8px; display: inline-block;">1-on-1 Guidance</span>
+        <h3 style="font-size: 1.35rem; margin-bottom: 6px;">Request Nutrition Consultation</h3>
+        <p class="text-muted" style="font-size: 0.9rem;">Connect directly with our pediatric nutrition experts for personalized meal stage and allergen guidance.</p>
+      </div>
+
+      <form onsubmit="handleConsultationSubmit(event)" style="display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px;">Your Name</label>
+          <input type="text" required placeholder="Parent or Caregiver Name" style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.9rem; background: var(--bg-surface); color: var(--text-main);">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px;">Email Address</label>
+            <input type="email" required placeholder="name@example.com" style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.9rem; background: var(--bg-surface); color: var(--text-main);">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px;">Baby's Age</label>
+            <select required style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.9rem; background: var(--bg-surface); color: var(--text-main);">
+              <option value="4-6m">4–6 Months (Stage 1 Purees)</option>
+              <option value="7-9m">7–9 Months (Stage 2 Blends)</option>
+              <option value="10-12m">10–12 Months (Stage 3 Mashes)</option>
+              <option value="12-24m">12–24+ Months (Toddler Soft Bites)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px;">Primary Focus or Allergen Concerns</label>
+          <input type="text" placeholder="e.g. Dairy intolerance, iron absorption, starting solids" style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.9rem; background: var(--bg-surface); color: var(--text-main);">
+        </div>
+
+        ${preselectedExpert ? `<div style="font-size: 0.82rem; color: var(--color-primary); font-weight: 600;">Preferred Expert: ${preselectedExpert}</div>` : ''}
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; margin-top: 8px;">
+          Confirm Consultation Request →
+        </button>
+      </form>
+    `;
+  }
+
+  modalOverlay.classList.add('active');
+};
+
+window.handleConsultationSubmit = function(e) {
+  e.preventDefault();
+  closePublicModal();
+  showToast('Consultation requested! Our pediatric nutrition team will reach out within 24 hours.');
+};
+
+window.closePublicModal = function() {
+  const modalOverlay = document.getElementById('public-modal');
+  if (modalOverlay) modalOverlay.classList.remove('active');
+};
+
 
